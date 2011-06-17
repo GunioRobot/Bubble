@@ -235,3 +235,5 @@ build/Release/Bubble.app/Contents/Resources/themes/default/verified.png
 build/Release/Bubble.app/Contents/Resources/user.png
 build/Release/Bubble.app/Contents/Resources/user_down.png
 build/Release/Bubble.app/Contents/Resources/white_dot.png
+build/Bubble.build/Release/Bubble.build/Objects-normal/i386/AppGrowl.o
+build/Bubble.build/Release/Bubble.build/Objects-normal/x86_64/AppGrowl.o
