@@ -267,25 +267,20 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
-								<string>A354C2D91249D86C0055FB8F</string>
-								<string>A3CAD20D12598AD9004D6ED0</string>
-								<string>A354BFEF1249CC810055FB8F</string>
-								<string>A354C0821249D1840055FB8F</string>
-								<string>29B97315FDCFA39411CA2CEA</string>
+								<string>A3F49F8B13ABC924000C6A3B</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1058C7A0FEA54F0111CA2CBB</string>
 								<string>1058C7A2FEA54F0111CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>A3F49F5713ABC6C5000C6A3B</string>
-								<string>A3F49F6313ABC6FD000C6A3B</string>
 								<string>1C77FABC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>16</integer>
-									<integer>11</integer>
-									<integer>0</integer>
+									<integer>26</integer>
+									<integer>21</integer>
+									<integer>20</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -317,6 +312,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -334,7 +331,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A3F49F8A13ABC8D5000C6A3B</string>
+										<string>A3F4A19113ABD08A000C6A3B</string>
 										<key>history</key>
 										<array>
 											<string>A345AF9F1348CC430056C978</string>
@@ -391,7 +388,7 @@
 											<string>A3F49F8413ABC8D5000C6A3B</string>
 											<string>A3F49F8513ABC8D5000C6A3B</string>
 											<string>A3F49F8713ABC8D5000C6A3B</string>
-											<string>A3F49F8913ABC8D5000C6A3B</string>
+											<string>A3F4A18F13ABD043000C6A3B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -431,6 +428,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {954, 290}}</string>
+										<key>RubberWindowFrame</key>
+										<string>0 59 1440 819 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -485,8 +484,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {954, 290}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 59 1440 819 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>

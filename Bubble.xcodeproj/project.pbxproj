@@ -150,24 +150,18 @@
 		A3F49FE113ABC924000C6A3B /* Writing Filters.txt in Resources */ = {isa = PBXBuildFile; fileRef = A3F49FB613ABC924000C6A3B /* Writing Filters.txt */; };
 		A3F49FE213ABC924000C6A3B /* Writing Markers.txt in Resources */ = {isa = PBXBuildFile; fileRef = A3F49FB713ABC924000C6A3B /* Writing Markers.txt */; };
 		A3F49FE313ABC924000C6A3B /* Writing Matchers.txt in Resources */ = {isa = PBXBuildFile; fileRef = A3F49FB813ABC924000C6A3B /* Writing Matchers.txt */; };
+		A3F4A17B13ABD028000C6A3B /* OAuthConsumer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F4A17A13ABD028000C6A3B /* OAuthConsumer.framework */; };
+		A3F4A18E13ABD02F000C6A3B /* OAuthConsumer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A3F4A17A13ABD028000C6A3B /* OAuthConsumer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A31D7252129EC8EC00385EEC /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "../Preference Panes";
-			dstSubfolderSpec = 7;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A3D89B3912745AF000B78216 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A3F4A18E13ABD02F000C6A3B /* OAuthConsumer.framework in CopyFiles */,
 				A3E382F21287187E00B4C695 /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +332,7 @@
 		A3F49FB613ABC924000C6A3B /* Writing Filters.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Writing Filters.txt"; sourceTree = "<group>"; };
 		A3F49FB713ABC924000C6A3B /* Writing Markers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Writing Markers.txt"; sourceTree = "<group>"; };
 		A3F49FB813ABC924000C6A3B /* Writing Matchers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Writing Matchers.txt"; sourceTree = "<group>"; };
+		A3F4A17A13ABD028000C6A3B /* OAuthConsumer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthConsumer.framework; path = Libraries/OAuthConsumer.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,6 +346,7 @@
 				A3DEF85912744ED900A4A922 /* WebKit.framework in Frameworks */,
 				A3D899B6127457CE00B78216 /* libicucore.dylib in Frameworks */,
 				A3B608AF1287061A0085ECB1 /* Growl.framework in Frameworks */,
+				A3F4A17B13ABD028000C6A3B /* OAuthConsumer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +356,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A3F4A17A13ABD028000C6A3B /* OAuthConsumer.framework */,
 				A3D899B5127457CE00B78216 /* libicucore.dylib */,
 				A3DEF85812744ED900A4A922 /* WebKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
@@ -741,7 +738,6 @@
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				A3DEF79612744D1D00A4A922 /* Headers */,
 				A3D89B3912745AF000B78216 /* CopyFiles */,
-				A31D7252129EC8EC00385EEC /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -923,6 +919,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Libraries\"",
+					"\"$(SRCROOT)/Libraries/OAuthConsumer/build/Debug\"",
+					"\"$(SRCROOT)/Libraries/OAuthConsumer/build/Release\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -932,6 +930,13 @@
 				GCC_PREFIX_HEADER = Bubble_Prefix.pch;
 				INFOPLIST_FILE = "Bubble-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Libraries/OAuthConsumer/build/OAuthConsumer.build/Debug/OAuthConsumer.build/Objects-normal/i386\"",
+					"\"$(SRCROOT)/Libraries/OAuthConsumer/build/OAuthConsumer.build/Debug/OAuthConsumer.build/Objects-normal/x86_64\"",
+					"\"$(SRCROOT)/Libraries/OAuthConsumer/build/OAuthConsumer.build/Release/OAuthConsumer.build/Objects-normal/i386\"",
+					"\"$(SRCROOT)/Libraries/OAuthConsumer/build/OAuthConsumer.build/Release/OAuthConsumer.build/Objects-normal/x86_64\"",
+				);
 				PRODUCT_NAME = Bubble;
 			};
 			name = Debug;
@@ -944,12 +949,21 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Libraries\"",
+					"\"$(SRCROOT)/Libraries/OAuthConsumer/build/Debug\"",
+					"\"$(SRCROOT)/Libraries/OAuthConsumer/build/Release\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Bubble_Prefix.pch;
 				INFOPLIST_FILE = "Bubble-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Libraries/OAuthConsumer/build/OAuthConsumer.build/Debug/OAuthConsumer.build/Objects-normal/i386\"",
+					"\"$(SRCROOT)/Libraries/OAuthConsumer/build/OAuthConsumer.build/Debug/OAuthConsumer.build/Objects-normal/x86_64\"",
+					"\"$(SRCROOT)/Libraries/OAuthConsumer/build/OAuthConsumer.build/Release/OAuthConsumer.build/Objects-normal/i386\"",
+					"\"$(SRCROOT)/Libraries/OAuthConsumer/build/OAuthConsumer.build/Release/OAuthConsumer.build/Objects-normal/x86_64\"",
+				);
 				PRODUCT_NAME = Bubble;
 			};
 			name = Release;
