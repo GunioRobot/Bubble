@@ -88,8 +88,6 @@
 		A3A5ECF212B3A1F300024C50 /* AdvancedPrefsPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A5ECF012B3A1F300024C50 /* AdvancedPrefsPanel.h */; };
 		A3A5ECF312B3A1F300024C50 /* AdvancedPrefsPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = A3A5ECF112B3A1F300024C50 /* AdvancedPrefsPanel.m */; };
 		A3A5ECF712B3A4CC00024C50 /* AdvancedPrefsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3A5ECF612B3A4CC00024C50 /* AdvancedPrefsView.xib */; };
-		A3B6087E128700970085ECB1 /* AppGrowl.h in Headers */ = {isa = PBXBuildFile; fileRef = A3B6087C128700970085ECB1 /* AppGrowl.h */; };
-		A3B6087F128700970085ECB1 /* AppGrowl.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B6087D128700970085ECB1 /* AppGrowl.m */; };
 		A3B608AF1287061A0085ECB1 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B608AE1287061A0085ECB1 /* Growl.framework */; };
 		A3C24B81127DA8A600D9E39D /* WeiboFilters.h in Headers */ = {isa = PBXBuildFile; fileRef = A3C24B7F127DA8A600D9E39D /* WeiboFilters.h */; };
 		A3C24B82127DA8A600D9E39D /* WeiboFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C24B80127DA8A600D9E39D /* WeiboFilters.m */; };
@@ -125,21 +123,17 @@
 		A3D89B0712745A6E00B78216 /* NSDictionary_DeepMutableCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D89AEA12745A6E00B78216 /* NSDictionary_DeepMutableCopy.m */; };
 		A3D89B0812745A6E00B78216 /* RegexKitLite.h in Headers */ = {isa = PBXBuildFile; fileRef = A3D89AEB12745A6E00B78216 /* RegexKitLite.h */; };
 		A3D89B0912745A6E00B78216 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D89AEC12745A6E00B78216 /* RegexKitLite.m */; };
-		A3D89B0A12745A6E00B78216 /* RegexKitTemplateMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A3D89AED12745A6E00B78216 /* RegexKitTemplateMatcher.h */; };
-		A3D89B0B12745A6E00B78216 /* RegexKitTemplateMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D89AEE12745A6E00B78216 /* RegexKitTemplateMatcher.m */; };
 		A3D89B0C12745A6E00B78216 /* sample_template.txt in Resources */ = {isa = PBXBuildFile; fileRef = A3D89AEF12745A6E00B78216 /* sample_template.txt */; };
 		A3D89B0D12745A6E00B78216 /* Source Code License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A3D89AF012745A6E00B78216 /* Source Code License.rtf */; };
 		A3D89B0E12745A6E00B78216 /* TemplateEngine-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3D89AF112745A6E00B78216 /* TemplateEngine-Info.plist */; };
 		A3D89B0F12745A6E00B78216 /* Writing Filters.txt in Resources */ = {isa = PBXBuildFile; fileRef = A3D89AF212745A6E00B78216 /* Writing Filters.txt */; };
 		A3D89B1012745A6E00B78216 /* Writing Markers.txt in Resources */ = {isa = PBXBuildFile; fileRef = A3D89AF312745A6E00B78216 /* Writing Markers.txt */; };
 		A3D89B1112745A6E00B78216 /* Writing Matchers.txt in Resources */ = {isa = PBXBuildFile; fileRef = A3D89AF412745A6E00B78216 /* Writing Matchers.txt */; };
-		A3D89B2E12745AE900B78216 /* RegexKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A3DEF91012744FC400A4A922 /* RegexKit.framework */; };
 		A3D97F4912B3513C0059C0D2 /* SmallBlueDot.psd in Resources */ = {isa = PBXBuildFile; fileRef = A3D97F4812B3513C0059C0D2 /* SmallBlueDot.psd */; };
 		A3DA423E128EE0B400F3497F /* bubble.icns in Resources */ = {isa = PBXBuildFile; fileRef = A3DA423D128EE0B400F3497F /* bubble.icns */; };
 		A3DC6F1E126F48EC00C9FBF7 /* AppURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A3DC6F1D126F48EC00C9FBF7 /* AppURLHandler.m */; };
 		A3DEF69412744CDE00A4A922 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29B97324FDCFA39411CA2CEA /* AppKit.framework */; };
 		A3DEF85912744ED900A4A922 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3DEF85812744ED900A4A922 /* WebKit.framework */; };
-		A3DEF91112744FC400A4A922 /* RegexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3DEF91012744FC400A4A922 /* RegexKit.framework */; };
 		A3E382F21287187E00B4C695 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A3B608AE1287061A0085ECB1 /* Growl.framework */; };
 		A3E38322128719AE00B4C695 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = A3E382D5128710C100B4C695 /* Growl Registration Ticket.growlRegDict */; };
 		A3E8F9ED12E5C7F600A19E26 /* KScroller.h in Headers */ = {isa = PBXBuildFile; fileRef = A3E8F9EB12E5C7F600A19E26 /* KScroller.h */; };
@@ -148,6 +142,8 @@
 		A3E8FA5F12E5D79A00A19E26 /* MyScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E8FA5D12E5D79A00A19E26 /* MyScroller.m */; };
 		A3E98B251291600800D01F98 /* status_alert_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E98B231291600800D01F98 /* status_alert_icon.png */; };
 		A3E98B261291600800D01F98 /* status_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A3E98B241291600800D01F98 /* status_icon.png */; };
+		A3F49F7613ABC7AD000C6A3B /* AppGrowl.h in Headers */ = {isa = PBXBuildFile; fileRef = A3F49F7413ABC7AD000C6A3B /* AppGrowl.h */; };
+		A3F49F7713ABC7AD000C6A3B /* AppGrowl.m in Sources */ = {isa = PBXBuildFile; fileRef = A3F49F7513ABC7AD000C6A3B /* AppGrowl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -167,7 +163,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				A3E382F21287187E00B4C695 /* Growl.framework in CopyFiles */,
-				A3D89B2E12745AE900B78216 /* RegexKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,9 +274,7 @@
 		A3A5ECF012B3A1F300024C50 /* AdvancedPrefsPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedPrefsPanel.h; sourceTree = "<group>"; };
 		A3A5ECF112B3A1F300024C50 /* AdvancedPrefsPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedPrefsPanel.m; sourceTree = "<group>"; };
 		A3A5ECF612B3A4CC00024C50 /* AdvancedPrefsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdvancedPrefsView.xib; sourceTree = "<group>"; };
-		A3B6087C128700970085ECB1 /* AppGrowl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppGrowl.h; sourceTree = "<group>"; };
-		A3B6087D128700970085ECB1 /* AppGrowl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppGrowl.m; sourceTree = "<group>"; };
-		A3B608AE1287061A0085ECB1 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = Local/Frameworks/Growl.framework; sourceTree = DEVELOPER_DIR; };
+		A3B608AE1287061A0085ECB1 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = /Users/Luke/Projects/Bubble/Libraries/Growl.framework; sourceTree = "<absolute>"; };
 		A3C24B7F127DA8A600D9E39D /* WeiboFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboFilters.h; sourceTree = "<group>"; };
 		A3C24B80127DA8A600D9E39D /* WeiboFilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboFilters.m; sourceTree = "<group>"; };
 		A3C603A112543B5F00049FC9 /* WeiboTimeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboTimeline.h; sourceTree = "<group>"; };
@@ -319,8 +312,6 @@
 		A3D89AEA12745A6E00B78216 /* NSDictionary_DeepMutableCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_DeepMutableCopy.m; sourceTree = "<group>"; };
 		A3D89AEB12745A6E00B78216 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		A3D89AEC12745A6E00B78216 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
-		A3D89AED12745A6E00B78216 /* RegexKitTemplateMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitTemplateMatcher.h; sourceTree = "<group>"; };
-		A3D89AEE12745A6E00B78216 /* RegexKitTemplateMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitTemplateMatcher.m; sourceTree = "<group>"; };
 		A3D89AEF12745A6E00B78216 /* sample_template.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample_template.txt; sourceTree = "<group>"; };
 		A3D89AF012745A6E00B78216 /* Source Code License.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Source Code License.rtf"; sourceTree = "<group>"; };
 		A3D89AF112745A6E00B78216 /* TemplateEngine-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TemplateEngine-Info.plist"; sourceTree = "<group>"; };
@@ -332,7 +323,6 @@
 		A3DC6F1C126F48EC00C9FBF7 /* AppURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppURLHandler.h; sourceTree = "<group>"; };
 		A3DC6F1D126F48EC00C9FBF7 /* AppURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppURLHandler.m; sourceTree = "<group>"; };
 		A3DEF85812744ED900A4A922 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		A3DEF91012744FC400A4A922 /* RegexKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RegexKit.framework; path = Local/Frameworks/RegexKit.framework; sourceTree = DEVELOPER_DIR; };
 		A3E382D5128710C100B4C695 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		A3E8F9EB12E5C7F600A19E26 /* KScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KScroller.h; sourceTree = "<group>"; };
 		A3E8F9EC12E5C7F600A19E26 /* KScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KScroller.m; sourceTree = "<group>"; };
@@ -340,6 +330,8 @@
 		A3E8FA5D12E5D79A00A19E26 /* MyScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScroller.m; sourceTree = "<group>"; };
 		A3E98B231291600800D01F98 /* status_alert_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_alert_icon.png; sourceTree = "<group>"; };
 		A3E98B241291600800D01F98 /* status_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_icon.png; sourceTree = "<group>"; };
+		A3F49F7413ABC7AD000C6A3B /* AppGrowl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppGrowl.h; sourceTree = "<group>"; };
+		A3F49F7513ABC7AD000C6A3B /* AppGrowl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppGrowl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,7 +339,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3DEF91112744FC400A4A922 /* RegexKit.framework in Frameworks */,
 				A3DEF69412744CDE00A4A922 /* AppKit.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				A3C958D0125AF9FE005261B2 /* Security.framework in Frameworks */,
@@ -364,7 +355,6 @@
 			isa = PBXGroup;
 			children = (
 				A3D899B5127457CE00B78216 /* libicucore.dylib */,
-				A3DEF91012744FC400A4A922 /* RegexKit.framework */,
 				A3DEF85812744ED900A4A922 /* WebKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				A3B608AE1287061A0085ECB1 /* Growl.framework */,
@@ -533,12 +523,12 @@
 		A354C0821249D1840055FB8F /* App */ = {
 			isa = PBXGroup;
 			children = (
+				A3F49F7413ABC7AD000C6A3B /* AppGrowl.h */,
+				A3F49F7513ABC7AD000C6A3B /* AppGrowl.m */,
 				A354C0831249D1840055FB8F /* AppDelegate.h */,
 				A354C0841249D1840055FB8F /* AppDelegate.m */,
 				A3DC6F1C126F48EC00C9FBF7 /* AppURLHandler.h */,
 				A3DC6F1D126F48EC00C9FBF7 /* AppURLHandler.m */,
-				A3B6087C128700970085ECB1 /* AppGrowl.h */,
-				A3B6087D128700970085ECB1 /* AppGrowl.m */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -650,8 +640,6 @@
 				A3D89AEA12745A6E00B78216 /* NSDictionary_DeepMutableCopy.m */,
 				A3D89AEB12745A6E00B78216 /* RegexKitLite.h */,
 				A3D89AEC12745A6E00B78216 /* RegexKitLite.m */,
-				A3D89AED12745A6E00B78216 /* RegexKitTemplateMatcher.h */,
-				A3D89AEE12745A6E00B78216 /* RegexKitTemplateMatcher.m */,
 				A3D89AEF12745A6E00B78216 /* sample_template.txt */,
 				A3D89AF012745A6E00B78216 /* Source Code License.rtf */,
 				A3D89AF112745A6E00B78216 /* TemplateEngine-Info.plist */,
@@ -698,11 +686,9 @@
 				A3D89B0412745A6E00B78216 /* NSArray_DeepMutableCopy.h in Headers */,
 				A3D89B0612745A6E00B78216 /* NSDictionary_DeepMutableCopy.h in Headers */,
 				A3D89B0812745A6E00B78216 /* RegexKitLite.h in Headers */,
-				A3D89B0A12745A6E00B78216 /* RegexKitTemplateMatcher.h in Headers */,
 				A34D033D1275BC7300CA1996 /* TemplateEngine.h in Headers */,
 				A316D5B412786E3600A3D987 /* NSWindowAdditions.h in Headers */,
 				A3C24B81127DA8A600D9E39D /* WeiboFilters.h in Headers */,
-				A3B6087E128700970085ECB1 /* AppGrowl.h in Headers */,
 				A33380481298E1E00033FCCF /* ImagePanelController.h in Headers */,
 				A35FAB38129EA4E400225E3B /* SS_PreferencePaneProtocol.h in Headers */,
 				A35FAB39129EA4E400225E3B /* SS_PrefsController.h in Headers */,
@@ -719,6 +705,7 @@
 				A326B04A12F6BB66007F0CE1 /* PathController.h in Headers */,
 				A3161301130018A700A7F83B /* UserInputController.h in Headers */,
 				A31613BE130044A700A7F83B /* MyImageView.h in Headers */,
+				A3F49F7613ABC7AD000C6A3B /* AppGrowl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,6 +740,7 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Bubble" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -863,11 +851,9 @@
 				A3D89B0512745A6E00B78216 /* NSArray_DeepMutableCopy.m in Sources */,
 				A3D89B0712745A6E00B78216 /* NSDictionary_DeepMutableCopy.m in Sources */,
 				A3D89B0912745A6E00B78216 /* RegexKitLite.m in Sources */,
-				A3D89B0B12745A6E00B78216 /* RegexKitTemplateMatcher.m in Sources */,
 				A34D033E1275BC7300CA1996 /* TemplateEngine.m in Sources */,
 				A316D5B512786E3600A3D987 /* NSWindowAdditions.m in Sources */,
 				A3C24B82127DA8A600D9E39D /* WeiboFilters.m in Sources */,
-				A3B6087F128700970085ECB1 /* AppGrowl.m in Sources */,
 				A33380491298E1E00033FCCF /* ImagePanelController.m in Sources */,
 				A35FAB3A129EA4E400225E3B /* SS_PrefsController.m in Sources */,
 				A31D7138129EBF8900385EEC /* MenuController.m in Sources */,
@@ -883,6 +869,7 @@
 				A326B04B12F6BB66007F0CE1 /* PathController.m in Sources */,
 				A3161302130018A700A7F83B /* UserInputController.m in Sources */,
 				A31613BF130044A700A7F83B /* MyImageView.m in Sources */,
+				A3F49F7713ABC7AD000C6A3B /* AppGrowl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -913,13 +900,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../templatekit/build/Release\"",
-					"\"$(DEVELOPER_DIR)/Local/Frameworks\"",
-					"\"$(SRCROOT)/../MGTemplateEngine/build/Release\"",
-					"\"$(DEVELOPER_DIR)/Local/Frameworks/Growl/Frameworks\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -937,13 +918,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../templatekit/build/Release\"",
-					"\"$(DEVELOPER_DIR)/Local/Frameworks\"",
-					"\"$(SRCROOT)/../MGTemplateEngine/build/Release\"",
-					"\"$(DEVELOPER_DIR)/Local/Frameworks/Growl/Frameworks\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Bubble_Prefix.pch;
@@ -957,6 +932,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Libraries";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -972,6 +948,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Libraries";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
