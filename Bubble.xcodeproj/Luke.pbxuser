@@ -226,6 +226,14 @@
 			A3F49F4913ABC6C2000C6A3B = A3F49F4913ABC6C2000C6A3B /* PBXTextBookmark */;
 			A3F49F4A13ABC6C2000C6A3B = A3F49F4A13ABC6C2000C6A3B /* PBXTextBookmark */;
 			A3F49F6413ABC6FD000C6A3B /* PBXTextBookmark */ = A3F49F6413ABC6FD000C6A3B /* PBXTextBookmark */;
+			A3F49F8013ABC8D5000C6A3B /* PBXTextBookmark */ = A3F49F8013ABC8D5000C6A3B /* PBXTextBookmark */;
+			A3F49F8113ABC8D5000C6A3B /* PBXTextBookmark */ = A3F49F8113ABC8D5000C6A3B /* PBXTextBookmark */;
+			A3F49F8213ABC8D5000C6A3B /* PBXTextBookmark */ = A3F49F8213ABC8D5000C6A3B /* PBXTextBookmark */;
+			A3F49F8413ABC8D5000C6A3B /* PBXTextBookmark */ = A3F49F8413ABC8D5000C6A3B /* PBXTextBookmark */;
+			A3F49F8513ABC8D5000C6A3B /* PBXTextBookmark */ = A3F49F8513ABC8D5000C6A3B /* PBXTextBookmark */;
+			A3F49F8713ABC8D5000C6A3B /* PBXTextBookmark */ = A3F49F8713ABC8D5000C6A3B /* PBXTextBookmark */;
+			A3F49F8913ABC8D5000C6A3B /* XCBuildMessageTextBookmark */ = A3F49F8913ABC8D5000C6A3B /* XCBuildMessageTextBookmark */;
+			A3F49F8A13ABC8D5000C6A3B /* PBXTextBookmark */ = A3F49F8A13ABC8D5000C6A3B /* PBXTextBookmark */;
 		};
 		sourceControlManager = A30A04AB12255AA20087B317 /* Source Control */;
 		userBuildSettings = {
@@ -636,14 +644,13 @@
 			sepNavVisRange = "{0, 180}";
 		};
 	};
-	A34D033B1275BC7300CA1996 /* TemplateEngine.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {867, 340}}";
-			sepNavSelRange = "{241, 0}";
-			sepNavVisRange = "{0, 533}";
-		};
-	};
 	A34D033C1275BC7300CA1996 /* TemplateEngine.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = TemplateEngine.m;
+		path = /Users/Luke/Projects/Bubble/Classes/MGTemplateEngine/TemplateEngine.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {893, 1024}}";
 			sepNavSelRange = "{132, 0}";
@@ -755,27 +762,6 @@
 			sepNavSelRange = "{2453, 0}";
 			sepNavVisRange = "{1719, 1376}";
 			sepNavWindowFrame = "{{0, 4}, {1280, 774}}";
-		};
-	};
-	A354C0051249CC810055FB8F /* NSString+SBJSON.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {871, 782}}";
-			sepNavSelRange = "{1618, 16}";
-			sepNavVisRange = "{982, 895}";
-		};
-	};
-	A354C0071249CC810055FB8F /* SBJsonBase.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {788, 1309}}";
-			sepNavSelRange = "{2023, 8}";
-			sepNavVisRange = "{1847, 729}";
-		};
-	};
-	A354C0091249CC810055FB8F /* SBJsonParser.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {926, 8806}}";
-			sepNavSelRange = "{2365, 42}";
-			sepNavVisRange = "{2601, 861}";
 		};
 	};
 	A354C00E1249CC810055FB8F /* WeiboConnector.h */ = {
@@ -1409,20 +1395,6 @@
 		vrLen = 264;
 		vrLoc = 0;
 	};
-	A3C24B7F127DA8A600D9E39D /* WeiboFilters.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {930, 326}}";
-			sepNavSelRange = "{130, 0}";
-			sepNavVisRange = "{0, 304}";
-		};
-	};
-	A3C24B80127DA8A600D9E39D /* WeiboFilters.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {996, 1343}}";
-			sepNavSelRange = "{1120, 0}";
-			sepNavVisRange = "{459, 1156}";
-		};
-	};
 	A3C603A112543B5F00049FC9 /* WeiboTimeline.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {871, 901}}";
@@ -1498,98 +1470,26 @@
 		vrLen = 666;
 		vrLoc = 32;
 	};
-	A3D89AD812745A6E00B78216 /* AppController.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {867, 313}}";
-			sepNavSelRange = "{218, 26}";
-			sepNavVisRange = "{0, 256}";
-		};
-	};
-	A3D89AD912745A6E00B78216 /* AppController.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {924, 1326}}";
-			sepNavSelRange = "{1696, 0}";
-			sepNavVisRange = "{1362, 569}";
-		};
-	};
-	A3D89ADB12745A6E00B78216 /* ICUTemplateMatcher.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {930, 765}}";
-			sepNavSelRange = "{617, 0}";
-			sepNavVisRange = "{136, 879}";
-		};
-	};
 	A3D89ADC12745A6E00B78216 /* ICUTemplateMatcher.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = ICUTemplateMatcher.m;
+		path = /Users/Luke/Projects/Bubble/Classes/MGTemplateEngine/ICUTemplateMatcher.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1108, 3008}}";
 			sepNavSelRange = "{145, 18}";
 			sepNavVisRange = "{0, 535}";
 		};
 	};
-	A3D89ADE12745A6E00B78216 /* MGTemplateEngine.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1004, 1649}}";
-			sepNavSelRange = "{1956, 0}";
-			sepNavVisRange = "{1191, 1492}";
-		};
-	};
-	A3D89ADF12745A6E00B78216 /* MGTemplateEngine.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {948, 12342}}";
-			sepNavSelRange = "{4300, 0}";
-			sepNavVisRange = "{4211, 455}";
-		};
-	};
-	A3D89AE112745A6E00B78216 /* MGTemplateFilter.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {867, 319}}";
-			sepNavSelRange = "{166, 126}";
-			sepNavVisRange = "{0, 298}";
-		};
-	};
-	A3D89AE212745A6E00B78216 /* MGTemplateMarker.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1196, 714}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{916, 1457}";
-		};
-	};
-	A3D89AE312745A6E00B78216 /* MGTemplateStandardFilters.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {867, 319}}";
-			sepNavSelRange = "{223, 16}";
-			sepNavVisRange = "{0, 252}";
-		};
-	};
-	A3D89AE412745A6E00B78216 /* MGTemplateStandardFilters.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {867, 1853}}";
-			sepNavSelRange = "{425, 113}";
-			sepNavVisRange = "{400, 485}";
-		};
-	};
-	A3D89AE512745A6E00B78216 /* MGTemplateStandardMarkers.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {867, 425}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{139, 539}";
-		};
-	};
-	A3D89AE612745A6E00B78216 /* MGTemplateStandardMarkers.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1212, 10727}}";
-			sepNavSelRange = "{1211, 8}";
-			sepNavVisRange = "{2622, 429}";
-		};
-	};
-	A3D89AE812745A6E00B78216 /* NSArray_DeepMutableCopy.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {788, 680}}";
-			sepNavSelRange = "{748, 0}";
-			sepNavVisRange = "{0, 936}";
-		};
-	};
 	A3D89AEB12745A6E00B78216 /* RegexKitLite.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = RegexKitLite.h;
+		path = /Users/Luke/Projects/Bubble/Classes/MGTemplateEngine/RegexKitLite.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {3292, 4736}}";
 			sepNavSelRange = "{16688, 0}";
@@ -1597,25 +1497,17 @@
 		};
 	};
 	A3D89AEC12745A6E00B78216 /* RegexKitLite.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = RegexKitLite.m;
+		path = /Users/Luke/Projects/Bubble/Classes/MGTemplateEngine/RegexKitLite.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {5692, 41856}}";
 			sepNavSelRange = "{2663, 12}";
 			sepNavVisRange = "{2523, 1049}";
 			sepNavWindowFrame = "{{0, 4}, {1280, 774}}";
-		};
-	};
-	A3D89AEF12745A6E00B78216 /* sample_template.txt */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {964, 527}}";
-			sepNavSelRange = "{154, 0}";
-			sepNavVisRange = "{0, 1144}";
-		};
-	};
-	A3D89AF412745A6E00B78216 /* Writing Matchers.txt */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {3788, 765}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 2100}";
 		};
 	};
 	A3DC6F1C126F48EC00C9FBF7 /* AppURLHandler.h */ = {
@@ -1627,9 +1519,9 @@
 	};
 	A3DC6F1D126F48EC00C9FBF7 /* AppURLHandler.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1196, 3520}}";
-			sepNavSelRange = "{793, 0}";
-			sepNavVisRange = "{585, 1256}";
+			sepNavIntBoundsRect = "{{0, 0}, {1196, 3392}}";
+			sepNavSelRange = "{5454, 0}";
+			sepNavVisRange = "{4853, 1331}";
 		};
 	};
 	A3E382D5128710C100B4C695 /* Growl Registration Ticket.growlRegDict */ = {
@@ -1764,5 +1656,102 @@
 		rType = 0;
 		vrLen = 540;
 		vrLoc = 0;
+	};
+	A3F49F8013ABC8D5000C6A3B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A354C0111249CC810055FB8F /* AccountController.m */;
+		name = "AccountController.m: 5";
+		rLen = 0;
+		rLoc = 52;
+		rType = 0;
+		vrLen = 540;
+		vrLoc = 0;
+	};
+	A3F49F8113ABC8D5000C6A3B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A354C0841249D1840055FB8F /* AppDelegate.m */;
+		name = "AppDelegate.m: 37";
+		rLen = 0;
+		rLoc = 1274;
+		rType = 0;
+		vrLen = 854;
+		vrLoc = 0;
+	};
+	A3F49F8213ABC8D5000C6A3B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A3F49F8313ABC8D5000C6A3B /* AppGrowl.m */;
+		name = "AppGrowl.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 767;
+		vrLoc = 0;
+	};
+	A3F49F8313ABC8D5000C6A3B /* AppGrowl.m */ = {
+		isa = PBXFileReference;
+		name = AppGrowl.m;
+		path = /Users/Luke/Projects/Bubble/Classes/App/AppGrowl.m;
+		sourceTree = "<absolute>";
+	};
+	A3F49F8413ABC8D5000C6A3B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A354C0831249D1840055FB8F /* AppDelegate.h */;
+		name = "AppDelegate.h: 13";
+		rLen = 8;
+		rLoc = 264;
+		rType = 0;
+		vrLen = 764;
+		vrLoc = 0;
+	};
+	A3F49F8513ABC8D5000C6A3B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A3F49F8613ABC8D5000C6A3B /* GrowlApplicationBridge.h */;
+		name = "GrowlApplicationBridge.h: 392";
+		rLen = 41;
+		rLoc = 19034;
+		rType = 0;
+		vrLen = 873;
+		vrLoc = 18388;
+	};
+	A3F49F8613ABC8D5000C6A3B /* GrowlApplicationBridge.h */ = {
+		isa = PBXFileReference;
+		name = GrowlApplicationBridge.h;
+		path = /Users/Luke/Projects/Bubble/Libraries/Growl.framework/Versions/A/Headers/GrowlApplicationBridge.h;
+		sourceTree = "<absolute>";
+	};
+	A3F49F8713ABC8D5000C6A3B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A3F49F8813ABC8D5000C6A3B /* AppGrowl.h */;
+		name = "AppGrowl.h: 11";
+		rLen = 0;
+		rLoc = 192;
+		rType = 0;
+		vrLen = 267;
+		vrLoc = 0;
+	};
+	A3F49F8813ABC8D5000C6A3B /* AppGrowl.h */ = {
+		isa = PBXFileReference;
+		name = AppGrowl.h;
+		path = /Users/Luke/Projects/Bubble/Classes/App/AppGrowl.h;
+		sourceTree = "<absolute>";
+	};
+	A3F49F8913ABC8D5000C6A3B /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "(Messages without a matching method signature will be assumed to return 'id' and accept '...' as arguments.)";
+		fRef = A3DC6F1D126F48EC00C9FBF7 /* AppURLHandler.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 124;
+		rType = 1;
+	};
+	A3F49F8A13ABC8D5000C6A3B /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = A3DC6F1D126F48EC00C9FBF7 /* AppURLHandler.m */;
+		name = "AppURLHandler.m: 125";
+		rLen = 0;
+		rLoc = 5454;
+		rType = 0;
+		vrLen = 1331;
+		vrLoc = 4853;
 	};
 }
