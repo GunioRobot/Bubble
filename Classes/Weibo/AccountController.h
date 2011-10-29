@@ -26,13 +26,13 @@ typedef enum {
 
 	WeiboConnector *weiboConnector;
 	WeiboCache *cache;
-	
+
 	WeiboTimeline *homeTimeline;
 	WeiboTimeline *mentions;
 	WeiboTimeline *comments;
 	WeiboTimeline *directMessages;
 	WeiboTimeline *favorites;
-	
+
 }
 +(AccountController*)instance;
 +(id)newInstance;

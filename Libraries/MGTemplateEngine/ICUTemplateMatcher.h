@@ -8,11 +8,11 @@
 #import "MGTemplateEngine.h"
 
 /*
- This is an example Matcher for MGTemplateEngine, implemented using libicucore on Leopard, 
+ This is an example Matcher for MGTemplateEngine, implemented using libicucore on Leopard,
  via the RegexKitLite library: http://regexkit.sourceforge.net/#RegexKitLite
- 
+
  This project includes everything you need, as long as you're building on Mac OS X 10.5 or later.
- 
+
  Other matchers can easily be implemented using the MGTemplateEngineMatcher protocol,
  if you prefer to use another regex framework, or use another matching method entirely.
  */

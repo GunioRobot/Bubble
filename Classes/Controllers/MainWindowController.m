@@ -13,26 +13,26 @@
 - (id)init {
 	if(self = [super initWithWindowNibName:@"MainWindow"]){
 		NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-		[nc addObserver:self selector:@selector(didShowErrorInfo:) 
-				   name:HTTPConnectionErrorNotification 
+		[nc addObserver:self selector:@selector(didShowErrorInfo:)
+				   name:HTTPConnectionErrorNotification
 				 object:nil];
-		[nc addObserver:self selector:@selector(didStartHTTPConnection:) 
+		[nc addObserver:self selector:@selector(didStartHTTPConnection:)
 				   name:HTTPConnectionStartNotification
 				 object:nil];
-		[nc addObserver:self selector:@selector(didFinishedHTTPConnection:) 
-				   name:HTTPConnectionFinishedNotification 
+		[nc addObserver:self selector:@selector(didFinishedHTTPConnection:)
+				   name:HTTPConnectionFinishedNotification
 				 object:nil];
-		[nc addObserver:self selector:@selector(didUpdateTimelineSegmentedControl:) 
-				   name:UpdateTimelineSegmentedControlNotification 
+		[nc addObserver:self selector:@selector(didUpdateTimelineSegmentedControl:)
+				   name:UpdateTimelineSegmentedControlNotification
 				 object:nil];
-		[nc addObserver:self selector:@selector(didDisplayImage:) 
+		[nc addObserver:self selector:@selector(didDisplayImage:)
 				   name:DisplayImageNotification object:nil];
-		[nc addObserver:self selector:@selector(enableBack:) 
+		[nc addObserver:self selector:@selector(enableBack:)
 				   name:PathChangedNotification object:nil];
-		[nc addObserver:self selector:@selector(handleAccountVerified:) 
+		[nc addObserver:self selector:@selector(handleAccountVerified:)
 				   name:AccountVerifiedNotification object:nil];
-		
-		
+
+
 	}
 	composeController=[[ComposeController alloc]init];
 	imagePanelController =[[ImagePanelController alloc] init];
@@ -66,12 +66,12 @@
 			[attachment setAttachmentCell:cell];
 			NSAttributedString* imageAttributedString = [NSAttributedString attributedStringWithAttachment:attachment];
 
-			NSFont *font=[NSFont menuFontOfSize:[NSFont systemFontSize]];			
+			NSFont *font=[NSFont menuFontOfSize:[NSFont systemFontSize]];
 			NSMutableAttributedString *attributedTitle =
 			[[NSMutableAttributedString alloc] initWithString: account
 												   attributes:[NSDictionary dictionaryWithObjectsAndKeys:
 															   font,NSFontAttributeName,nil]];
-			
+
 			[attributedTitle appendAttributedString:imageAttributedString];
 			[item setAttributedTitle:attributedTitle];
 		}
@@ -88,7 +88,7 @@
 	menuItem.representedObject = representedObject;
 	menuItem.indentationLevel = indentationLevel;
 	return menuItem;
-}	
+}
 - (IBAction)disabledMenuItem:(id)sender {
 	// Do nothing
 }
@@ -197,7 +197,7 @@
 		[timelineSegmentedControl setImage:nil forSegment:index];
 		[timelineSegmentedControl setImage:image forSegment:index];
 	}
-	
+
 }
 
 -(IBAction)compose:(id)sender{
@@ -247,7 +247,7 @@
 
 
 -(IBAction)refreshTimeline:(id)sender{
-	[[PathController instance].currentTimeline reset]; 
+	[[PathController instance].currentTimeline reset];
 	[[PathController instance].currentTimeline loadRecentTimeline];
 }
 -(IBAction)openUserInput:(id)sender{
@@ -266,9 +266,9 @@
                                       eventNumber:0
                                        clickCount:1
                                          pressure:1];
-	
+
 	[NSMenu popUpContextMenu:userMenu withEvent:event forView:[(NSView *)sender superview]];
-	
+
 }
 
 -(IBAction)showMyProfile:(id)sender{

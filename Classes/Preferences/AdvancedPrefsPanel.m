@@ -19,15 +19,15 @@
 - (NSView *)paneView
 {
     BOOL loaded = YES;
-    
+
     if (!prefsView) {
         loaded = [NSBundle loadNibNamed:@"AdvancedPrefsView" owner:self];
     }
-    
+
     if (loaded) {
         return prefsView;
     }
-    
+
     return nil;
 }
 

@@ -10,7 +10,7 @@
 
     NSString *bundleExtension;
     NSString *searchPath;
-    
+
     NSToolbar *prefsToolbar;
     NSMutableDictionary *prefsToolbarItems;
 
@@ -21,7 +21,7 @@
     BOOL usesTexturedWindow;
     BOOL alwaysShowsToolbar;
     BOOL alwaysOpensCentered;
-    
+
     BOOL debug;
 }
 

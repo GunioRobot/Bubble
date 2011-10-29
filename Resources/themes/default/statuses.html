@@ -24,7 +24,7 @@
 					</optgroup>
 				</select>
 				</form>
-		
+
 		</div>
 		<div class="actions">
 		{% if status.favorited %}
@@ -39,7 +39,7 @@
 
 		<hr class="topSeparator" />
 		<div id="text">
-		
+
 		{{ status.text|weibo_content_format }}
 		{% if status.thumbnail_pic %}
 		<div class="attachments">
@@ -49,7 +49,7 @@
 		</div>
 		<div class="clear"></div>
 		{% /if %}
-		
+
 		{% if status.retweeted_status %}
 		<div class="bubble">
 		<cite><img src="tip.gif"/> </cite>
@@ -65,12 +65,12 @@
 		</div>
 		<div class="clear"></div>
 		{% /if %}
-		
+
 		</p>
 		</blockquote>
 		</div>
 		{% /if %}
-		
+
 		{% if status.status %}
 		<div class="bubble">
 		<cite><img src="tip.gif"/> </cite>
@@ -86,16 +86,16 @@
 		</div>
 		<div class="clear"></div>
 		{% /if %}
-		
+
 		</p>
 		</blockquote>
 		</div>
 		{% /if %}
-		
+
 		<div class="footerSeparator"></div>
 		<div class="footer">
 
-		
+
 		</div>
 		</div>
 	</div>

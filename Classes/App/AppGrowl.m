@@ -10,11 +10,11 @@
 #define GrowlNotification @"GrowlNotification"
 
 @implementation AppGrowl
-- (id) init { 
+- (id) init {
     if ( self = [super init] ) {
         /* Tell growl we are going to use this class to hand growl notifications */
         [GrowlApplicationBridge setGrowlDelegate:self];
-		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(makeGrowl:) 
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(makeGrowl:)
 				   name:GrowlNotification
 				 object:nil];
     }
@@ -24,7 +24,7 @@
 -(void)makeGrowl:(NSNotification*)notification{
 	[GrowlApplicationBridge notifyWithTitle:@"new hometimline"
 								description:@"new home timeline"
-						   notificationName:@"NewHomeTimeline" 
+						   notificationName:@"NewHomeTimeline"
 								   iconData:nil
 								   priority:0
 								   isSticky:NO

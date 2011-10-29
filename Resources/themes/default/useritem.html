@@ -1,42 +1,42 @@
 {% for user in users %}
 <div class="stream-item">
 <div class="stream-item-content user">
-  
+
   <div class="avatar">
       <a href="weibo://user?fetch_with=user_id&value={{user.id}}">
 		<img height="50" width="50" src="{{user.profile_image_url}}" class="user-profile-link"/>
 	  </a>
   </div>
-  
-  
+
+
   <div class="status-content">
-  
+
     <div class="status-row">
       <span class="user-name">
         <a class="screen-name user-profile-link" >{{ user.screen_name }}</a>
       </span>
 	          <span class="full-name">from {{ user.location }}  </span>
     </div>
-    
+
     <div class="status-row">
       <div class="status-text">
 	  {{user.description}}
 	  </div>
     </div>
-    
+
     <div class="status-row">
       <a href="" class="status-timestamp">
       	<span>{{ user.created_at|weibo_date_format }}</span>
       </a>
-      
+
       <span class="status-actions">
             <a href="#" class="retweet-action" title="Retweet"><span><i></i><b>Retweet</b></span></a>
             <a href="" class="reply-action" title="Reply"><span><i></i><b>Reply</b></span></a>
       </span>
     </div>
-    
+
   </div>
-  
+
 </div>
 </div>
 
@@ -48,4 +48,4 @@
 	<div class="button" onclick="javascript:window.open('weibo://friends?screen_name={{screen_name}}&cursor={{next_cursor}}','_blank')">Next</div>
 	</div>
 	</div>
-	
+

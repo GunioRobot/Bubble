@@ -34,7 +34,7 @@ typedef enum {
 -(void)resetPath;
 @property(nonatomic,assign) WeiboTimeline *currentTimeline;
 @property(nonatomic) int currentIndex;
-@property(nonatomic,retain) NSMutableArray *pathArray; 
+@property(nonatomic,retain) NSMutableArray *pathArray;
 @property(nonatomic)PathType currentType;
 @property(nonatomic,retain)NSString *idWithCurrentType;
 @end

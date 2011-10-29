@@ -49,7 +49,7 @@
 
 #pragma mark 最近信息请求的发起和处理
 -(void) loadRecentTimeline{
-	
+
 	[[NSNotificationCenter defaultCenter] postNotificationName:ShowTipMessageNotification
 														object:@"Loading Recent"];
 	//when app started,execute this first
@@ -94,7 +94,7 @@
 	//[gapStatus setObject:[NSNumber numberWithInt:1] forKey:@"gap"];
 	//[statusArray replaceObjectAtIndex:[statusArray count]-1 withObject:gapStatus];
 	//NSLog(@"%@",[[statusArray lastObject] objectForKey:"gap"]);
-	if (statuses!=nil&&[statuses count]>0) {		
+	if (statuses!=nil&&[statuses count]>0) {
 		self.lastReceivedId=[[statuses objectAtIndex:0] objectForKey:@"id"];
         //self.lastReadId = [[statuses objectAtIndex:0] objectForKey:@"id"];
 		self.oldestReceivedId =[[statuses lastObject] objectForKey:@"id"];

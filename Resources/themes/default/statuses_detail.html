@@ -10,16 +10,16 @@
   {% else %}
     <div class="status-dogear"></div>
   {% /if %}
-  
+
   <div class="avatar">
       <a href="weibo://user?fetch_with=user_id&value={{status.user.id}}">
 		<img height="50" width="50" src="{{status.user.profile_image_url}}" class="user-profile-link"/>
 	  </a>
   </div>
-  
-  
+
+
   <div class="status-content">
-  
+
     <div class="status-row">
       <span class="user-name">
         <a class="screen-name user-profile-link" href="weibo://user?fetch_with=user_id&value={{status.user.id}}">{{ status.user.screen_name }}</a>
@@ -29,11 +29,11 @@
         <span class="full-name">from {{ status.source|weibo_link_target_blank }}  </span>
       </span>
     </div>
-    
+
     <div class="status-row">
       <div class="status-text">
 	  {{ status.text|weibo_content_format }}
-		
+
 		{% if status.thumbnail_pic %}
 		<div class="attachments">
 		<a href="weibo://image?url={{status.original_pic}}" target="_blank">
@@ -42,7 +42,7 @@
 		</div>
 		<div class="clear"></div>
 		{% /if %}
-		
+
 		{% if status.retweeted_status %}
 		<div class="bubble">
 		<blockquote>
@@ -57,12 +57,12 @@
 		</div>
 		<div class="clear"></div>
 		{% /if %}
-		
+
 		</p>
 		</blockquote>
 		</div>
 		{% /if %}
-		
+
 		{% if status.status %}
 		<div class="bubble">
 		<blockquote>
@@ -77,21 +77,21 @@
 		</div>
 		<div class="clear"></div>
 		{% /if %}
-		
+
 		</p>
 		</blockquote>
 		</div>
 		{% /if %}
 
-	  
+
 	  </div>
     </div>
-    
+
     <div class="status-row">
       <a href="" class="status-timestamp">
       	<span>{{ status.created_at|weibo_date_format }}</span>
       </a>
-      
+
       <span class="status-actions">
             <a href="#" class="favorite-action"  title="Favorite"><span><i></i><b>Favorite</b></span></a>
 		    {% if status.retweeted_status %}
@@ -102,9 +102,9 @@
 			<a href="weibo://reply?id={{status.id}}&user={{status.user.screen_name}}&content={{status.text|weibo_content_truncate}}" class="reply-action" title="Reply"><span><i></i><b>Reply</b></span></a>
       </span>
     </div>
-    
+
   </div>
-  
+
 </div>
 
 

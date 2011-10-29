@@ -11,9 +11,9 @@
 @implementation AppDelegate
 
 + (void)setupUserDefaults{
-	NSString *userDefaultsValuesPath = [[NSBundle mainBundle] pathForResource:@"UserDefaults" 
-                                                                       ofType:@"plist"]; 
-    NSDictionary *userDefaultsValuesDict = [NSDictionary dictionaryWithContentsOfFile:userDefaultsValuesPath]; 
+	NSString *userDefaultsValuesPath = [[NSBundle mainBundle] pathForResource:@"UserDefaults"
+                                                                       ofType:@"plist"];
+    NSDictionary *userDefaultsValuesDict = [NSDictionary dictionaryWithContentsOfFile:userDefaultsValuesPath];
     [[NSUserDefaults standardUserDefaults] registerDefaults:userDefaultsValuesDict];
 }
 
@@ -22,13 +22,13 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	// Insert code here to initialize your application 
+	// Insert code here to initialize your application
 	//custom url schema
-	[[NSAppleEventManager sharedAppleEventManager]  
-	 setEventHandler:self  
-	 andSelector:@selector(handleURLEvent:withReplyEvent:)  
-	 forEventClass:kInternetEventClass  
-	 andEventID:kAEGetURL]; 
+	[[NSAppleEventManager sharedAppleEventManager]
+	 setEventHandler:self
+	 andSelector:@selector(handleURLEvent:withReplyEvent:)
+	 forEventClass:kInternetEventClass
+	 andEventID:kAEGetURL];
 	statusItem = [[[NSStatusBar systemStatusBar]
 				   statusItemWithLength:NSSquareStatusItemLength] retain];
 	[statusItem setImage:[NSImage imageNamed:@"status_icon.png"]];
@@ -48,42 +48,42 @@
 	[loginWindow release];
 	mainWindow=[[MainWindowController alloc]init];
 	[mainWindow showWindow:self];
-	
+
 }
 
 
 #pragma mark CoreData Support
 
 - (NSString *)applicationSupportDirectory {
-	
+
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
     NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : NSTemporaryDirectory();
     return [basePath stringByAppendingPathComponent:@"Bubble"];
 }
 
 - (NSManagedObjectModel *)managedObjectModel {
-	
+
     if (managedObjectModel) return managedObjectModel;
-	
-    managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];    
+
+    managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];
     return managedObjectModel;
 }
 
 - (NSPersistentStoreCoordinator *) persistentStoreCoordinator {
-	
+
     if (persistentStoreCoordinator) return persistentStoreCoordinator;
-	
+
     NSManagedObjectModel *mom = [self managedObjectModel];
     if (!mom) {
         NSAssert(NO, @"Managed object model is nil");
         NSLog(@"%@:%s No model to generate a store from", [self class], _cmd);
         return nil;
     }
-	
+
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *applicationSupportDirectory = [self applicationSupportDirectory];
     NSError *error = nil;
-    
+
     if ( ![fileManager fileExistsAtPath:applicationSupportDirectory isDirectory:NULL] ) {
 		if (![fileManager createDirectoryAtPath:applicationSupportDirectory withIntermediateDirectories:NO attributes:nil error:&error]) {
             NSAssert(NO, ([NSString stringWithFormat:@"Failed to create App Support directory %@ : %@", applicationSupportDirectory,error]));
@@ -91,26 +91,26 @@
             return nil;
 		}
     }
-    
+
     NSURL *url = [NSURL fileURLWithPath: [applicationSupportDirectory stringByAppendingPathComponent: @"Cache.db"]];
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: mom];
     if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
-												  configuration:nil 
-															URL:url 
-														options:nil 
+												  configuration:nil
+															URL:url
+														options:nil
 														  error:&error]){
         [[NSApplication sharedApplication] presentError:error];
         [persistentStoreCoordinator release], persistentStoreCoordinator = nil;
         return nil;
-    }    
-	
+    }
+
     return persistentStoreCoordinator;
 }
 
 - (NSManagedObjectContext *) managedObjectContext {
-	
+
     if (managedObjectContext) return managedObjectContext;
-	
+
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (!coordinator) {
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
@@ -122,13 +122,13 @@
     }
     managedObjectContext = [[NSManagedObjectContext alloc] init];
     [managedObjectContext setPersistentStoreCoordinator: coordinator];
-	
+
     return managedObjectContext;
 }
 
 
 - (void)handleURLEvent:(NSAppleEventDescriptor*)event withReplyEvent:(NSAppleEventDescriptor*)replyEvent
-{	
+{
 	NSString *urlString=[[event paramDescriptorForKeyword:keyDirectObject] stringValue];
 	[urlHandler handleURL:urlString];
 }

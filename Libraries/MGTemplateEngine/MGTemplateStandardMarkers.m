@@ -101,7 +101,7 @@
 	commentStack = nil;
 	[cycles release];
 	cycles = nil;
-	
+
 	[super dealloc];
 }
 
@@ -109,14 +109,14 @@
 - (NSArray *)markers
 {
 	return [NSArray arrayWithObjects:
-			FOR_START, FOR_END, 
-			SECTION_START, SECTION_END, 
-			IF_START, ELSE, IF_END, 
-			NOW, 
-			COMMENT_START, COMMENT_END, 
-			LOAD, 
-			CYCLE, 
-			SET, 
+			FOR_START, FOR_END,
+			SECTION_START, SECTION_END,
+			IF_START, ELSE, IF_END,
+			NOW,
+			COMMENT_START, COMMENT_END,
+			LOAD,
+			CYCLE,
+			SET,
 			nil];
 }
 
@@ -136,9 +136,9 @@
 }
 
 
-- (NSObject *)markerEncountered:(NSString *)marker withArguments:(NSArray *)args inRange:(NSRange)markerRange 
-				   blockStarted:(BOOL *)blockStarted blockEnded:(BOOL *)blockEnded 
-				  outputEnabled:(BOOL *)outputEnabled nextRange:(NSRange *)nextRange 
+- (NSObject *)markerEncountered:(NSString *)marker withArguments:(NSArray *)args inRange:(NSRange)markerRange
+				   blockStarted:(BOOL *)blockStarted blockEnded:(BOOL *)blockEnded
+				  outputEnabled:(BOOL *)outputEnabled nextRange:(NSRange *)nextRange
 			   currentBlockInfo:(NSDictionary *)blockInfo newVariables:(NSDictionary **)newVariables
 {
 	if ([marker isEqualToString:FOR_START]) {
@@ -152,7 +152,7 @@
 			if ([args count] == 4 && [[args objectAtIndex:3] isEqualToString:FOR_REVERSE]) {
 				reversed = YES;
 			}
-			
+
 			// Determine if we have acceptable parameters.
 			NSObject *loopEnumObject = nil;
 			BOOL valid = NO;
@@ -171,7 +171,7 @@
 				}
 			} else {
 				startIndex = 0;
-				
+
 				// Check that endArg is a collection.
 				NSObject *obj = [engine resolveVariable:endArg];
 				if (obj && [obj respondsToSelector:@selector(objectEnumerator)] && [obj respondsToSelector:@selector(count)]) {
@@ -182,29 +182,29 @@
 					}
 				}
 			}
-			
+
 			if (valid) {
 				*blockStarted = YES;
-				
+
 				// Set up for-stack frame for this loop.
 				NSMutableDictionary *stackFrame = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-												   [NSValue valueWithRange:markerRange], STACK_START_MARKER_RANGE, 
-												   [NSValue valueWithRange:*nextRange], STACK_START_REMAINING_RANGE, 
+												   [NSValue valueWithRange:markerRange], STACK_START_MARKER_RANGE,
+												   [NSValue valueWithRange:*nextRange], STACK_START_REMAINING_RANGE,
 												   nil];
 				[forStack addObject:stackFrame];
-				
+
 				// Set up variables for the block.
 				int currentIndex = (reversed) ? endIndex : startIndex;
 				NSMutableDictionary *loopVars = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-												 [NSNumber numberWithInt:startIndex], FOR_LOOP_START_INDEX, 
-												 [NSNumber numberWithInt:endIndex], FOR_LOOP_END_INDEX, 
-												 [NSNumber numberWithInt:currentIndex], FOR_LOOP_CURR_INDEX, 
-												 [NSNumber numberWithBool:reversed], FOR_REVERSE, 
+												 [NSNumber numberWithInt:startIndex], FOR_LOOP_START_INDEX,
+												 [NSNumber numberWithInt:endIndex], FOR_LOOP_END_INDEX,
+												 [NSNumber numberWithInt:currentIndex], FOR_LOOP_CURR_INDEX,
+												 [NSNumber numberWithBool:reversed], FOR_REVERSE,
 												 nil];
 				NSMutableDictionary *blockVars = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-												  loopVars, FOR_LOOP_VARS, 
+												  loopVars, FOR_LOOP_VARS,
 												  nil];
-				
+
 				// Add enumerator variable if appropriate.
 				if (!isRange) {
 					NSEnumerator *enumerator;
@@ -217,7 +217,7 @@
 					[stackFrame setObject:startArg forKey:FOR_STACK_ENUM_VAR];
 					[blockVars setObject:[enumerator nextObject] forKey:startArg];
 				}
-				
+
 				// Add parentLoop if it exists.
 				if (blockInfo) {
 					NSDictionary *parentLoop;
@@ -226,26 +226,26 @@
 						[loopVars setObject:parentLoop forKey:FOR_PARENT_LOOP];
 					}
 				}
-				
+
 				*newVariables = blockVars;
 			} else {
 				// Disable output for this block.
 				*blockStarted = YES;
 				NSMutableDictionary *stackFrame = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-												   [NSNumber numberWithBool:YES], FOR_STACK_DISABLED_OUTPUT, 
-												   [NSValue valueWithRange:markerRange], STACK_START_MARKER_RANGE, 
-												   [NSValue valueWithRange:*nextRange], STACK_START_REMAINING_RANGE, 
+												   [NSNumber numberWithBool:YES], FOR_STACK_DISABLED_OUTPUT,
+												   [NSValue valueWithRange:markerRange], STACK_START_MARKER_RANGE,
+												   [NSValue valueWithRange:*nextRange], STACK_START_REMAINING_RANGE,
 												   nil];
 				[forStack addObject:stackFrame];
 				*outputEnabled = NO;
 			}
 		}
-		
+
 	} else if ([marker isEqualToString:FOR_END]) {
 		// Decide whether to loop back or terminate.
 		if ([self currentBlock:blockInfo matchesTopOfStack:forStack]) {
 			NSMutableDictionary *frame = [forStack lastObject];
-			
+
 			// Check to see if this was a block with an invalid looping condition.
 			NSNumber *disabledOutput = (NSNumber *)[frame objectForKey:FOR_STACK_DISABLED_OUTPUT];
 			if (disabledOutput && [disabledOutput boolValue]) {
@@ -253,7 +253,7 @@
 				*blockEnded = YES;
 				[forStack removeLastObject];
 			}
-			
+
 			// This is the same loop that's on top of our stack. Check to see if we need to loop back.
 			BOOL loop = NO;
 			NSDictionary *blockVars = [blockInfo objectForKey:BLOCK_VARIABLES_KEY];
@@ -286,11 +286,11 @@
 					}
 				}
 			}
-			
+
 			if (loop) {
 				// Set remainingRange from stack dict
 				*nextRange = [[frame objectForKey:STACK_START_REMAINING_RANGE] rangeValue];
-				
+
 				// Set new currentIndex
 				if (reversed) {
 					currentIndex--;
@@ -298,53 +298,53 @@
 					currentIndex++;
 				}
 				[loopVars setObject:[NSNumber numberWithInt:currentIndex] forKey:FOR_LOOP_CURR_INDEX];
-				
+
 				// Set new val for enumVar if specified
 				NSMutableDictionary *newVars = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-												loopVars, FOR_LOOP_VARS, 
+												loopVars, FOR_LOOP_VARS,
 												nil];
 				if (newEnumValue) {
 					[newVars setObject:newEnumValue forKey:[frame objectForKey:FOR_STACK_ENUM_VAR]];
 				}
-				
+
 				*newVariables = newVars;
 			} else {
 				// Don't need to do much here, since:
 				// 1. Each blockStack frame for a "for" has its own currentLoop dict.
 				// 2. Parent loop's enum-vars are still in place in the parent stack's vars.
-				
+
 				// End block.
 				*blockEnded = YES;
 				[forStack removeLastObject];
 			}
-			
+
 			// Return immediately.
 			return nil;
 		}
 		*blockEnded = YES;
-	
+
 	} else if ([marker isEqualToString:SECTION_START]) {
 		if (args && [args count] == 1) {
 			*blockStarted = YES;
-			
+
 			// Set up for-stack frame for this section.
 			NSMutableDictionary *stackFrame = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-											   [NSValue valueWithRange:markerRange], STACK_START_MARKER_RANGE, 
+											   [NSValue valueWithRange:markerRange], STACK_START_MARKER_RANGE,
 											   nil];
 			[sectionStack addObject:stackFrame];
 		}
-		
+
 	} else if ([marker isEqualToString:SECTION_END]) {
 		if ([self currentBlock:blockInfo matchesTopOfStack:sectionStack]) {
 			// This is the same section that's on top of our stack. Remove from stack.
 			[sectionStack removeLastObject];
 		}
 		*blockEnded = YES;
-		
+
 	} else if ([marker isEqualToString:IF_START]) {
 		if (args && ([args count] == 1 || [args count] == 3)) {
 			*blockStarted = YES;
-			
+
 			// Determine appropriate values for outputEnabled and for our if-stack frame.
 			BOOL elseEncountered = NO;
 			BOOL argTrue = NO;
@@ -370,7 +370,7 @@
 					num2 = ([engine resolveVariable:secondArg]) ? 1 : 0;
 				}
 				NSString *op = [[args objectAtIndex:1] lowercaseString];
-				
+
 				if ([op isEqualToString:@"and"] || [op isEqualToString:@"&&"]) {
 					argTrue = (firstTrue && secondTrue);
 				} else if ([op isEqualToString:@"or"] || [op isEqualToString:@"||"]) {
@@ -407,46 +407,46 @@
 					}
 				}
 			}
-			
+
 			BOOL shouldDisableOutput = *outputEnabled;
 			if (shouldDisableOutput && !argTrue) {
 				*outputEnabled = NO;
 			}
-			
+
 			// Create variables.
 			NSMutableDictionary *ifVars = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-										   [NSNumber numberWithBool:argTrue], IF_ARG_TRUE, 
-										   [NSNumber numberWithBool:shouldDisableOutput], DISABLE_OUTPUT, 
-										   [NSNumber numberWithBool:elseEncountered], IF_ELSE_SEEN, 
+										   [NSNumber numberWithBool:argTrue], IF_ARG_TRUE,
+										   [NSNumber numberWithBool:shouldDisableOutput], DISABLE_OUTPUT,
+										   [NSNumber numberWithBool:elseEncountered], IF_ELSE_SEEN,
 										   nil];
-			
+
 			// Set up for-stack frame for this if-statement.
 			NSMutableDictionary *stackFrame = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-											   [NSValue valueWithRange:markerRange], STACK_START_MARKER_RANGE, 
-											   ifVars, IF_VARS, 
+											   [NSValue valueWithRange:markerRange], STACK_START_MARKER_RANGE,
+											   ifVars, IF_VARS,
 											   nil];
 			[ifStack addObject:stackFrame];
 		}
-		
+
 	} else if ([marker isEqualToString:ELSE]) {
 		if ([self currentBlock:blockInfo matchesTopOfStack:ifStack]) {
 			NSMutableDictionary *frame = [[ifStack lastObject] objectForKey:IF_VARS];
 			BOOL elseSeen = [[frame objectForKey:IF_ELSE_SEEN] boolValue];
 			BOOL argTrue = [[frame objectForKey:IF_ARG_TRUE] boolValue];
 			BOOL modifyOutput = [[frame objectForKey:DISABLE_OUTPUT] boolValue];
-			
+
 			if (!elseSeen) {
 				if (modifyOutput) {
 					// Only make changes if we've not already seen an 'else' for this block,
 					// and if we're modifying output state at all.
 					*outputEnabled = !argTrue; // either turning it off, or turning it back on.
 				}
-				
+
 				// Note that we've now seen the else marker.
 				[frame setObject:[NSNumber numberWithBool:YES] forKey:IF_ELSE_SEEN];
 			}
 		}
-		
+
 	} else if ([marker isEqualToString:IF_END]) {
 		if ([self currentBlock:blockInfo matchesTopOfStack:ifStack]) {
 			NSMutableDictionary *frame = [[ifStack lastObject] objectForKey:IF_VARS];
@@ -457,35 +457,35 @@
 				// If it's already enabled, this will have no harmful effect.
 				*outputEnabled = YES;
 			}
-			
+
 			// End block.
 			[ifStack removeLastObject];
 			*blockEnded = YES;
 		}
 		*blockEnded = YES;
-		
+
 	} else if ([marker isEqualToString:NOW]) {
 		return [NSDate date];
-		
+
 	} else if ([marker isEqualToString:COMMENT_START]) {
 		// Work out if we need to start a block.
 		if (!args || [args count] == 0) {
 			*blockStarted = YES;
-			
+
 			// Determine appropriate values for outputEnabled and for our stack frame.
 			BOOL shouldDisableOutput = *outputEnabled;
 			if (shouldDisableOutput) {
 				*outputEnabled = NO;
 			}
-			
+
 			// Set up for-stack frame for this if-statement.
 			NSMutableDictionary *stackFrame = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-											   [NSValue valueWithRange:markerRange], STACK_START_MARKER_RANGE, 
-											   [NSNumber numberWithBool:shouldDisableOutput], DISABLE_OUTPUT, 
+											   [NSValue valueWithRange:markerRange], STACK_START_MARKER_RANGE,
+											   [NSNumber numberWithBool:shouldDisableOutput], DISABLE_OUTPUT,
 											   nil];
 			[commentStack addObject:stackFrame];
 		}
-		
+
 	} else if ([marker isEqualToString:COMMENT_END]) {
 		// Check this is block on top of stack.
 		if ([self currentBlock:blockInfo matchesTopOfStack:commentStack]) {
@@ -497,13 +497,13 @@
 				// If it's already enabled, this will have no harmful effect.
 				*outputEnabled = YES;
 			}
-			
+
 			// End block.
 			[commentStack removeLastObject];
 			*blockEnded = YES;
 		}
 		*blockEnded = YES;
-		
+
 	} else if ([marker isEqualToString:LOAD]) {
 		if (args && [args count] > 0) {
 			for (NSString *className in args) {
@@ -521,7 +521,7 @@
 				}
 			}
 		}
-		
+
 	} else if ([marker isEqualToString:CYCLE]) {
 		if (args && [args count] > 0) {
 			// Check to see if it's an existing cycle.
@@ -548,14 +548,14 @@
 	} else if ([marker isEqualToString:SET]) {
 		if (args && [args count] == 2 && *outputEnabled) {
 			// Set variable arg1 to value arg2.
-			NSDictionary *newVar = [NSDictionary dictionaryWithObject:[args objectAtIndex:1] 
+			NSDictionary *newVar = [NSDictionary dictionaryWithObject:[args objectAtIndex:1]
 															   forKey:[args objectAtIndex:0]];
 			if (newVar) {
 				*newVariables = newVar;
 			}
 		}
 	}
-	
+
 	return nil;
 }
 
@@ -595,7 +595,7 @@
 {
 	BOOL numeric = NO;
 	int value = 0;
-	
+
 	if (arg && [arg length] > 0) {
 		if ([[arg substringToIndex:1] isEqualToString:@"0"] || [arg intValue] != 0) {
 			numeric = YES;
@@ -604,13 +604,13 @@
 			// Check to see if arg is a variable with an intValue.
 			NSObject *argObj = [engine resolveVariable:arg];
 			NSString *argStr = [NSString stringWithFormat:@"%@", argObj];
-			if (argObj && [argObj respondsToSelector:@selector(intValue)] && 
+			if (argObj && [argObj respondsToSelector:@selector(intValue)] &&
 				[self argIsNumeric:argStr intValue:&value checkVariables:NO]) { // avoid recursion
 				numeric = YES;
 			}
 		}
 	}
-	
+
 	if (val) {
 		*val = value;
 	}

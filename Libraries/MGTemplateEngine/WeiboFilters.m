@@ -45,7 +45,7 @@ const int TRUNCATE_LENGTH=20;
 			}
 
 		}
-		 
+
 	}
 	if ([filter isEqualToString:WEIBO_CONTENT_FORMAT]) {
 		NSMutableString *mutableContent=[NSMutableString stringWithFormat:@"%@",value];
@@ -54,20 +54,20 @@ const int TRUNCATE_LENGTH=20;
 		[mutableContent replaceOccurrencesOfRegex:TOPIC_STRING withString:TOPIC_REPLACE_STRING];
 		return mutableContent;
 	}
-	
+
 	if ([filter isEqualToString:WEIBO_LINK_TARGET_BLANK]) {
 		NSMutableString *link=[NSMutableString stringWithFormat:@"%@",value];
 		[link replaceOccurrencesOfRegex:@"<a" withString:@"<a target=\"_blank\" "];
 		return link;
 	}
-	
+
 	if ([filter isEqualToString:WEIBO_CONTENT_TRUNCATE]) {
 		NSString *content=[NSString stringWithFormat:@"%@",value];
 		int stringLength=content.length;
 		int length=stringLength<TRUNCATE_LENGTH?stringLength:TRUNCATE_LENGTH;
 		return [[NSString stringWithFormat:@"%@...",[content substringToIndex:length]] urlEncoded];
 	}
-	
+
 	if ([filter isEqualToString:WEIBO_BIG_PROFILE_IMAGE]) {
 		NSString *content=[NSString stringWithFormat:@"%@",value];
 		return [content stringByReplacingOccurrencesOfString:@"/50/" withString:@"/180/"];

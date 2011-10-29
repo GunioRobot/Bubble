@@ -22,15 +22,15 @@
 }
 
 
-- (void)loadImagefromURL:(NSString *)url 
+- (void)loadImagefromURL:(NSString *)url
 {
-	
+
 	NSWindow *window=[self window];
 	NSPoint mouseLoc = [NSEvent mouseLocation];
 	fromRect.origin=mouseLoc;
 	fromRect.size.width=1;
 	fromRect.size.height=1;
-	
+
 	if (![window isVisible]) {
 		[[self window] setFrame:initPanelRect display:NO];
 		[imageView setImage:nil];

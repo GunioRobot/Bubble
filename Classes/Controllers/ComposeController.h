@@ -23,7 +23,7 @@ typedef enum {
 	IBOutlet NSProgressIndicator * postProgressIndicator;
 	__weak   AccountController *weiboAccount;
 	NSRect fromRect;
-	
+
 	PostType postType;
 	NSMutableDictionary *data;
 }

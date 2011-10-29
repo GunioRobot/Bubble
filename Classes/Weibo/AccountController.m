@@ -36,7 +36,7 @@ static AccountController *instance;
 	if (self=[super init]) {
 		weiboConnector=[[WeiboConnector alloc] initWithDelegate:self];
 		cache=[[WeiboCache alloc]init];
-		homeTimeline =[[WeiboTimeline alloc] initWithWeiboConnector:weiboConnector 
+		homeTimeline =[[WeiboTimeline alloc] initWithWeiboConnector:weiboConnector
 															 timelineType:Home];
 		mentions=[[WeiboTimeline alloc] initWithWeiboConnector:weiboConnector
 														timelineType:Mentions];
@@ -49,22 +49,22 @@ static AccountController *instance;
 		NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
 
 		[nc addObserver:self selector:@selector(getUser:)
-				   name:GetUserNotification 
+				   name:GetUserNotification
 				 object:nil];
 		[nc addObserver:self selector:@selector(getFriends:)
-				   name:GetFriendsNotification 
+				   name:GetFriendsNotification
 				 object:nil];
 		[nc addObserver:self selector:@selector(getStatusComments:)
-				   name:GetStatusCommentsNotification 
+				   name:GetStatusCommentsNotification
 				 object:nil];
 		[nc addObserver:self selector:@selector(showStatus:)
-				   name:ShowStatusNotification 
+				   name:ShowStatusNotification
 				 object:nil];
-		
+
 		[NSTimer scheduledTimerWithTimeInterval:60
-										 target:self 
-									   selector:@selector(checkUnread) 
-									   userInfo:nil 
+										 target:self
+									   selector:@selector(checkUnread)
+									   userInfo:nil
 										repeats:YES];
 	}
 	return self;
@@ -84,7 +84,7 @@ static AccountController *instance;
 		//定期刷新页面，使得显示的时间定期更新
 		[[NSNotificationCenter defaultCenter] postNotificationName:ReloadTimelineNotification
 															object:self];
-		
+
 		NSMutableDictionary* params =[[[NSMutableDictionary alloc] initWithCapacity:0] autorelease];
 		[params setObject:@"1" forKey:@"with_new_status"];
 		[params setObject:[NSString stringWithFormat:@"%@",homeTimeline.lastReceivedId] forKey:@"since_id"];
@@ -115,12 +115,12 @@ static AccountController *instance;
 -(void)resetCount:(StatusResetType)resetType{
 	NSMutableDictionary *params=[NSMutableDictionary dictionaryWithCapacity:0];
 	[params setObject:[NSString stringWithFormat:@"%d",resetType] forKey:@"type"];
-	[weiboConnector resetCountWithParameters:params 
-							completionTarget:self 
+	[weiboConnector resetCountWithParameters:params
+							completionTarget:self
 							completionAction:@selector(didResetCount:)];
 }
 -(void)didResetCount:(NSDictionary*)result{
-	
+
 }
 
 -(void)getUSerTimeline:(NSMutableDictionary*)param{
@@ -215,19 +215,19 @@ static AccountController *instance;
 	const char* cPassword;
 	UInt32 length=0;
 	OSStatus error=SecKeychainFindGenericPassword(NULL,
-												  strlen(serviceName), 
-												  serviceName, 
-												  strlen(cUsername), 
+												  strlen(serviceName),
+												  serviceName,
+												  strlen(cUsername),
 												  cUsername,
-												  &length, 
-												  (void**)&cPassword, 
+												  &length,
+												  (void**)&cPassword,
 												  NULL);
 	if (error!=noErr) {
 		NSLog (@"SecKeychainFindGenericPassword () For User:%@ error: %d",username, error);
 	}
-	
-	NSString *string = [[[NSString alloc] initWithBytes:cPassword 
-												 length:length 
+
+	NSString *string = [[[NSString alloc] initWithBytes:cPassword
+												 length:length
 											   encoding:NSUTF8StringEncoding] autorelease];
 	return string;
 
@@ -239,10 +239,10 @@ static AccountController *instance;
 	const char* cPassword=[newPassword cStringUsingEncoding:NSUTF8StringEncoding];
 	OSStatus error=SecKeychainAddGenericPassword(nil,
 													strlen(serviceName),
-													serviceName, 
+													serviceName,
 													strlen(cUsername),
 													cUsername,
-													strlen(cPassword), 
+													strlen(cPassword),
 													cPassword,
 													nil);
 	if (error!=noErr) {
@@ -255,9 +255,9 @@ static AccountController *instance;
 	SecKeychainItemRef keychainItemRef;
 	OSStatus error=SecKeychainFindGenericPassword(nil,
 													  strlen(serviceName),
-													  serviceName, 
+													  serviceName,
 													  strlen(cUsername),
-													  cUsername, 
+													  cUsername,
 													  nil, nil, &keychainItemRef);
 	if (error==noErr) {
 		error=SecKeychainItemDelete(keychainItemRef);
@@ -269,15 +269,15 @@ static AccountController *instance;
 
 #pragma mark 操作
 -(void)postWithStatus:(NSString*)status{
-	[weiboConnector updateWithStatus:status 
-					completionTarget:self 
+	[weiboConnector updateWithStatus:status
+					completionTarget:self
 					completionAction:@selector(didPost:)];
 }
 -(void)postWithStatus:(NSString*)status image:(NSData*)data imageName:(NSString*)imageName{
-	[weiboConnector updateWithStatus:status 
+	[weiboConnector updateWithStatus:status
 						   image:data
 						   imageName:imageName
-					completionTarget:self 
+					completionTarget:self
 					completionAction:@selector(didPost:)];
 }
 
@@ -323,7 +323,7 @@ static AccountController *instance;
 
 -(void)getFriends:(NSNotification*)notification{
 	NSMutableDictionary* params =[[[notification object] mutableCopy] autorelease];
-	
+
 	[[NSNotificationCenter defaultCenter] postNotificationName:ShowLoadingPageNotification object:nil];
 	[weiboConnector getFriendsWithParameters:params
 						completionTarget:self
@@ -393,7 +393,7 @@ static AccountController *instance;
 								  completionAction:@selector(didCreateFavorites:)];
 }
 -(void)didCreateFavorites:(NSDictionary*)result{
-	
+
 }
 
 -(void)destroyFavorites:(NSString *)statusId{
@@ -404,13 +404,13 @@ static AccountController *instance;
 								 completionAction:@selector(didDestroyFavorites:)];
 }
 -(void)didDestroyFavorites:(NSDictionary*)result{
-	
+
 }
 
 
 -(void)sendMessage:(NSMutableDictionary*)param{
-	[weiboConnector sendMessageWithParamters:param 
-							completionTarget:self 
+	[weiboConnector sendMessageWithParamters:param
+							completionTarget:self
 							completionAction:@selector(didPost:)];
 }
 @end

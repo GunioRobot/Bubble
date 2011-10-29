@@ -15,12 +15,12 @@
 {
     NSMutableArray *newArray;
     unsigned int index, count;
-	
+
     count = [self count];
     newArray = [[NSMutableArray allocWithZone:[self zone]] initWithCapacity:count];
     for (index = 0; index < count; index++) {
         id anObject;
-		
+
         anObject = [self objectAtIndex:index];
         if ([anObject respondsToSelector:@selector(deepMutableCopy)]) {
             anObject = [anObject deepMutableCopy];
@@ -34,7 +34,7 @@
             [newArray addObject:anObject];
         }
     }
-	
+
     return newArray;
 }
 

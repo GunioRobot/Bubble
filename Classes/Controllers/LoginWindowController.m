@@ -30,7 +30,7 @@
 		[[NSUserDefaults standardUserDefaults] setValue:accounts forKey:@"accounts"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 	}
-	
+
 	[[NSUserDefaults standardUserDefaults] setValue:nameString forKey:@"currentAccount"];
 	[[AccountController instance] setPasswordForUser:nameString withPassword:[pw stringValue]];
 	[appDelegate openMainWindow];

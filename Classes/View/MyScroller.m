@@ -18,17 +18,17 @@ NSColor *KScrollerKnobSlotColorNormal;
 NSColor *KScrollerKnobSlotColorHover;
 + (void)load {
 	NSAutoreleasePool *pool = [NSAutoreleasePool new];
-	
+
 	KScrollerKnobColorNormal =
     [[NSColor colorWithCalibratedWhite:0.2 alpha:0.3] retain];
 	KScrollerKnobColorHover =
     [[NSColor colorWithCalibratedWhite:0.2 alpha:0.8] retain];
-	
+
     KScrollerKnobSlotColorNormal=[[NSColor colorWithCalibratedWhite:1.0 alpha:0.01] retain];
 
 	KScrollerKnobSlotColorHover =
     [[NSColor redColor] retain];
-	
+
 	[pool drain];
 }
 
@@ -77,12 +77,12 @@ NSColor *KScrollerKnobSlotColorHover;
 										userInfo:nil];
 			[self addTrackingArea:trackingArea_];
 		}
-		
+
 		// bubble
-	
+
 		slotRect.size.width = 9.0;
 		slotRect.origin.x = 3.0;
-	
+
 		NSBezierPath *bp =
         [NSBezierPath bezierPathWithRoundedRect:slotRect xRadius:4.5 yRadius:4.5];
 		[KScrollerKnobSlotColorNormal set];

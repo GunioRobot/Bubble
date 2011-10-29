@@ -22,58 +22,58 @@
 - (void)drawRect:(NSRect)inRect
 {
 	[NSGraphicsContext saveGraphicsState];
-	
+
 	inRect = NSInsetRect(inRect, 2, 2);
-	
+
 	NSBezierPath	*clipPath = [NSBezierPath bezierPathWithRoundedRect:inRect xRadius:4 yRadius:4];
-	
+
 	[[NSColor windowFrameColor] set];
 	[clipPath setLineWidth:2];
 	[clipPath stroke];
-	
+
 	//Ensure we have an even/odd winding rule in effect
 	[clipPath setWindingRule:NSEvenOddWindingRule];
 	[clipPath addClip];
-	
+
 	[super drawRect:inRect];
-	
+
 	if (hovered) {
 		[[[NSColor blackColor] colorWithAlphaComponent:0.30f] set];
 		[clipPath fill];
-		
+
 		//Draw the arrow
 		NSBezierPath	*arrowPath = [NSBezierPath bezierPath];
 		NSRect			frame = [self frame];
-		[arrowPath moveToPoint:NSMakePoint(frame.size.width - ARROW_XOFFSET - ARROW_WIDTH, 
+		[arrowPath moveToPoint:NSMakePoint(frame.size.width - ARROW_XOFFSET - ARROW_WIDTH,
 										   (ARROW_YOFFSET + (CGFloat)ARROW_HEIGHT))];
 		[arrowPath relativeLineToPoint:NSMakePoint(ARROW_WIDTH, 0)];
 		[arrowPath relativeLineToPoint:NSMakePoint(-(ARROW_WIDTH/2.0f), -((CGFloat)ARROW_HEIGHT))];
-		
+
 		[[NSColor whiteColor] set];
 		[arrowPath fill];
 	}
-	
+
 	[NSGraphicsContext restoreGraphicsState];
 }
 
 - (void)setHovered:(BOOL)inHovered
 {
 	hovered = inHovered;
-	
+
 	[self setNeedsDisplay:YES];
 }
 
 - (void)mouseEntered:(NSEvent *)inEvent
 {
 	[self setHovered:YES];
-	
-	[super mouseEntered:inEvent];	
+
+	[super mouseEntered:inEvent];
 }
 
 - (void)mouseExited:(NSEvent *)inEvent
 {
 	[self setHovered:NO];
-	
+
 	[super mouseExited:inEvent];
 }
 
@@ -85,14 +85,14 @@
 		[self removeTrackingRect:trackingTag];
 		trackingTag = -1;
 	}
-	
+
 	[super viewWillMoveToSuperview:newSuperview];
 }
 
 - (void)viewDidMoveToSuperview
 {
 	[super viewDidMoveToSuperview];
-	
+
 	[self resetCursorRects];
 }
 
@@ -102,14 +102,14 @@
 		[self removeTrackingRect:trackingTag];
 		trackingTag = -1;
 	}
-	
+
 	[super viewWillMoveToWindow:newWindow];
 }
 
 - (void)viewDidMoveToWindow
 {
 	[super viewDidMoveToWindow];
-	
+
 	[self resetCursorRects];
 }
 
@@ -127,20 +127,20 @@
 		[self removeTrackingRect:trackingTag];
 		trackingTag = -1;
 	}
-	
+
 	//Add a tracking rect if our superview and window are ready
 	if ([self superview] && [self window]) {
 		NSRect	myFrame = [self frame];
 		NSRect	trackRect = NSMakeRect(0, 0, myFrame.size.width, myFrame.size.height);
-		
+
 		if (trackRect.size.width > myFrame.size.width) {
 			trackRect.size.width = myFrame.size.width;
 		}
-		
+
 		NSPoint	localPoint = [self convertPoint:[[self window] convertScreenToBase:[NSEvent mouseLocation]]
 									   fromView:nil];
 		BOOL	mouseInside = NSPointInRect(localPoint, myFrame);
-		
+
 		trackingTag = [self addTrackingRect:trackRect owner:self userData:nil assumeInside:mouseInside];
 		if (mouseInside) [self mouseEntered:nil];
 	}

@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface NSURL(Additions) 
+@interface NSURL(Additions)
 
 + (NSString*) urlStringWithBaseurl:(NSString*) baseurl path:(NSString*)path queryParameters:(NSDictionary *) params;
 + (NSString *)encodeString:(NSString *)string;

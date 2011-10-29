@@ -21,7 +21,7 @@ static NSMutableDictionary *relationshipNameEntityName;
 }
 
 -(NSString*)entityNameWithRelationshipName:(NSString*)relationshipName{
-	
+
 	return [relationshipNameEntityName valueForKey:relationshipName];
 }
 
@@ -40,7 +40,7 @@ static NSMutableDictionary *relationshipNameEntityName;
 	if (![[self managedObjectContext] commitEditing]) {
         NSLog(@"%@:%s unable to commit editing before saving", [self class], _cmd);
     }
-	
+
     if (![[self managedObjectContext] save:&error]) {
         [[NSApplication sharedApplication] presentError:error];
     }
@@ -52,8 +52,8 @@ static NSMutableDictionary *relationshipNameEntityName;
 		[statusTimeline setValue:[status valueForKey:@"id"] forKey:@"id"];
 		[statusTimeline setValue:type forKey:@"type"];
 		[statusTimeline setValue:status forKey:@"status"];
-		[self managedObjectFromDictionary:statusTimeline 
-						   withEntityName:@"WeiboTimeline" 
+		[self managedObjectFromDictionary:statusTimeline
+						   withEntityName:@"WeiboTimeline"
 				 withManagedObjectContext:[self managedObjectContext]];
 	}
 	[self commitEditingAndSave];
@@ -104,7 +104,7 @@ static NSMutableDictionary *relationshipNameEntityName;
 		NSRelationshipDescription *description = [relationshipsByName objectForKey:relationshipName];
 		if (![description isToMany]) {
 			NSDictionary *childStructureDictionary = [valueDictionary objectForKey:relationshipName];
-			NSManagedObject *childObject = [self managedObjectFromDictionary:childStructureDictionary 
+			NSManagedObject *childObject = [self managedObjectFromDictionary:childStructureDictionary
 																  withEntityName:[self entityNameWithRelationshipName:relationshipName]
 													withManagedObjectContext:moc];
 			[managedObject setValue:childObject forKey:relationshipName];
@@ -113,7 +113,7 @@ static NSMutableDictionary *relationshipNameEntityName;
 		NSMutableSet *relationshipSet = [managedObject valueForKey:relationshipName];
 		NSArray *relationshipArray = [valueDictionary objectForKey:relationshipName];
 		for (NSDictionary *childStructureDictionary in relationshipArray) {
-			NSManagedObject *childObject = [self managedObjectFromDictionary:childStructureDictionary 
+			NSManagedObject *childObject = [self managedObjectFromDictionary:childStructureDictionary
 																  withEntityName:[self entityNameWithRelationshipName:relationshipName]
 													withManagedObjectContext:moc];
 			[relationshipSet addObject:childObject];

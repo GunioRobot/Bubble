@@ -17,7 +17,7 @@
     NSEnumerator *keyEnumerator;
     id anObject;
     id aKey;
-	
+
     newDictionary = [self mutableCopy];
     // Run through the new dictionary and replace any objects that respond to -deepMutableCopy or -mutableCopy with copies.
     keyEnumerator = [[newDictionary allKeys] objectEnumerator];
@@ -35,7 +35,7 @@
 			[newDictionary setObject:anObject forKey:aKey];
 		}
     }
-	
+
     return newDictionary;
 }
 

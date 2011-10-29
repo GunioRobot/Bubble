@@ -14,22 +14,22 @@
 - (id)init {
 	self = [super initWithWindowNibName:@"Compose"];
 	weiboAccount=[AccountController instance];
-	
+
 	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-	[nc addObserver:self selector:@selector(didPost:) 
+	[nc addObserver:self selector:@selector(didPost:)
 			   name:DidPostStatusNotification
 			 object:nil];
-	
-	[nc addObserver:self selector:@selector(handleReply:) 
+
+	[nc addObserver:self selector:@selector(handleReply:)
 			   name:ReplyNotification
 			 object:nil];
-	
-	[nc addObserver:self selector:@selector(handleRePost:) 
+
+	[nc addObserver:self selector:@selector(handleRePost:)
 			   name:RepostNotification
 			 object:nil];
-	[nc addObserver:self selector:@selector(handleSendMessage:) 
+	[nc addObserver:self selector:@selector(handleSendMessage:)
 			   name:SendMessageNotification
-			 object:nil];	
+			 object:nil];
 	return self;
 }
 
@@ -128,7 +128,7 @@
 	}
 	[postProgressIndicator setHidden:NO];
 	[postProgressIndicator startAnimation:self];
-	
+
 }
 -(void)didPost:(NSNotification*)notification{
 	[postProgressIndicator setHidden:YES];

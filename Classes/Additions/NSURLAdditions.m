@@ -28,19 +28,19 @@
             }
             NSString *name = [names objectAtIndex:i];
 			NSString *value =[params objectForKey:name];
-            [str appendString:[NSString stringWithFormat:@"%@=%@", 
+            [str appendString:[NSString stringWithFormat:@"%@=%@",
 							   name, [self encodeString:value]]];
         }
     }
-    
+
     return [NSString stringWithFormat:@"%@/%@",baseurl,str];
 }
 
 + (NSString *)encodeString:(NSString *)string
 {
-    NSString *result = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, 
-																		   (CFStringRef)string, 
-																		   NULL, 
+    NSString *result = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
+																		   (CFStringRef)string,
+																		   NULL,
 																		   (CFStringRef)@";/?:@&=$+{}<>,",
 																		   kCFStringEncodingUTF8);
     return [result autorelease];

@@ -59,7 +59,7 @@ static PathController *pathController;
 	}
 	[[NSNotificationCenter defaultCenter] postNotificationName:PathChangedNotification
 														object:nil];
-	
+
 }
 
 -(void)backward{

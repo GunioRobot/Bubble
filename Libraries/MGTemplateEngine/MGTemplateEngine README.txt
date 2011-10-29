@@ -1,6 +1,6 @@
 MGTemplateEngine
 By Matt Legend Gemmell
-http://mattgemmell.com/ 
+http://mattgemmell.com/
 
 
 
@@ -89,7 +89,7 @@ Note: both "for" constructs provide several useful variables during the body of 
 * if x / if x == y - else - /if: A standard if-/if or if-else-/if conditional construct. The arguments to the if-statement are processed either as boolean truth-values or numerical comparisons, and can be:
 
 	* x
-	* x == y 
+	* x == y
 	* x = y (same as ==)
 	* x and y
 	* x && y (same as and)
@@ -131,11 +131,11 @@ http://unicode.org/reports/tr35/tr35-4.html#Date_Format_Patterns
 Feature Requests and Bug Reports
 --------------------------------
 
-Please submit any feature requests or bug reports to me via email; you can find my address on the About page of my site, here: http://mattgemmell.com/about 
+Please submit any feature requests or bug reports to me via email; you can find my address on the About page of my site, here: http://mattgemmell.com/about
 
 I hope you enjoy using MGTemplateEngine!
 
 Cheers,
 -Matt Legend Gemmell
 
-http://mattgemmell.com/ 
+http://mattgemmell.com/

@@ -6,7 +6,7 @@
           <img src="{{user.profile_image_url|weibo_big_image}}" width="180" class="thumb"/>
         </a>
         <div class="full-name">
-           <h2>{{user.screen_name}}</h2> 
+           <h2>{{user.screen_name}}</h2>
 		   {% if user.verified %}
 		   <span class="verified-icon"></span>
 		   {% /if %}
@@ -16,9 +16,9 @@
         </div>
       	<div class="location">{{user.location}}</div>
     </div>
-    
+
     <div class="user-info">
-      <span class="bio">{{user.description}}</span> 
+      <span class="bio">{{user.description}}</span>
       {% if user.url notequalsstring "http://1" %}
 		<a href="{{user.url}}" target="_blank">{{user.url}}</a>
 	  {% /if %}
@@ -30,7 +30,7 @@
   </ul>
   </div>
 </div>
-  
+
   </div><hr class="component-spacer"></div>
   <div class="user-header"></div>
   <div id="user_content">

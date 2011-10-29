@@ -9,9 +9,9 @@
 #import "WeiboConnector.h"
 
 #pragma mark Weibo Private Interface
-@interface WeiboConnector(Private) 
+@interface WeiboConnector(Private)
 
--(NSString*)_sendRequestWithMethod:(NSString*)method 
+-(NSString*)_sendRequestWithMethod:(NSString*)method
 						   baseurl:(NSString*) baseurl
 							  path:(NSString*) path
 				   queryParameters:(NSDictionary *) params
@@ -47,24 +47,24 @@
 
 
 #pragma mark Sina Weibo API Interface Implementation
--(NSString *) verifyAccountWithParameters:(NSMutableDictionary*)params 
-						 completionTarget:(id)target  
+-(NSString *) verifyAccountWithParameters:(NSMutableDictionary*)params
+						 completionTarget:(id)target
 						 completionAction:(SEL)action{
 	NSString *path=@"account/verify_credentials.json";
 	return [self _sendRequestWithMethod:nil
-								baseurl:WEIBO_BASE_URL 
+								baseurl:WEIBO_BASE_URL
 								   path:path
 						queryParameters:params
 								   body:nil completionTarget:target
 					   completionAction:action];
 }
 
--(NSString *)checkUnreadWithParameters:(NSMutableDictionary*)params 
-					  completionTarget:(id)target  
+-(NSString *)checkUnreadWithParameters:(NSMutableDictionary*)params
+					  completionTarget:(id)target
 					  completionAction:(SEL)action{
 	NSString *path=@"statuses/unread.json";
 	return [self _sendRequestWithMethod:nil
-								baseurl:WEIBO_BASE_URL 
+								baseurl:WEIBO_BASE_URL
 								   path:path
 						queryParameters:params
 								   body:nil completionTarget:target
@@ -77,9 +77,9 @@
 						   completionAction:(SEL)action
 {
 	NSString *path=[NSString stringWithString:@"statuses/home_timeline.json"];
-	return [self _sendRequestWithMethod:nil 
+	return [self _sendRequestWithMethod:nil
 								baseurl:WEIBO_BASE_URL
-								   path:path 
+								   path:path
 						queryParameters:params
 								   body:nil
 					   completionTarget:(id)target
@@ -95,7 +95,7 @@
 								   path:path queryParameters:params
 								   body:nil
 					   completionTarget:target
-					   completionAction:action];	
+					   completionAction:action];
 }
 
 -(NSString *)getUSerTimelineWithParameters:(NSMutableDictionary*)params
@@ -116,7 +116,7 @@
 								   path:path queryParameters:params
 								   body:nil completionTarget:target
 					   completionAction:action];
-	
+
 }
 -(NSString *) getCommentsWithParameters:(NSMutableDictionary*)params
 					   completionTarget:(id)target
@@ -152,13 +152,13 @@
 	}else {
 		[postBody appendData:[[NSString stringWithFormat:@"comment=%@&id=%@&source=%@",comment,sid,_appKey]dataUsingEncoding:NSUTF8StringEncoding]];
 	}
-	return [self _sendRequestWithMethod:@"POST" 
+	return [self _sendRequestWithMethod:@"POST"
 								baseurl:WEIBO_BASE_URL
-								   path:path 
+								   path:path
 						queryParameters:nil
 								   body:postBody
 					   completionTarget:(id)target
-					   completionAction:(SEL)action];	
+					   completionAction:(SEL)action];
 
 }
 
@@ -170,13 +170,13 @@
 	NSString *status=[params objectForKey:@"status"];
 	NSString *sid=[params objectForKey:@"id"];
 	[postBody appendData:[[NSString stringWithFormat:@"status=%@&id=%@&source=%@",status,sid,_appKey]dataUsingEncoding:NSUTF8StringEncoding]];
-	return [self _sendRequestWithMethod:@"POST" 
+	return [self _sendRequestWithMethod:@"POST"
 								baseurl:WEIBO_BASE_URL
-								   path:path 
+								   path:path
 						queryParameters:nil
 								   body:postBody
 					   completionTarget:(id)target
-					   completionAction:(SEL)action];	
+					   completionAction:(SEL)action];
 }
 
 -(NSString *) sendMessageWithParamters:(NSMutableDictionary*)params
@@ -187,34 +187,34 @@
 	NSString *screenName=[params objectForKey:@"screen_name"];
 	NSString *text=[params objectForKey:@"text"];
 	[postBody appendData:[[NSString stringWithFormat:@"screen_name=%@&text=%@&source=%@",screenName,text,_appKey]dataUsingEncoding:NSUTF8StringEncoding]];
-	return [self _sendRequestWithMethod:@"POST" 
+	return [self _sendRequestWithMethod:@"POST"
 								baseurl:WEIBO_BASE_URL
-								   path:path 
+								   path:path
 						queryParameters:nil
 								   body:postBody
 					   completionTarget:(id)target
-					   completionAction:(SEL)action];	
+					   completionAction:(SEL)action];
 }
-	
--(NSString *) updateWithStatus:(NSString*)status				  
+
+-(NSString *) updateWithStatus:(NSString*)status
 			  completionTarget:(id)target
 			  completionAction:(SEL)action{
 	NSString *path=[NSString stringWithString:@"statuses/update.json"];
 	NSMutableData *postBody = [NSMutableData data];
 	[postBody appendData:[[NSString stringWithFormat:@"status=%@&source=%@",status,_appKey]dataUsingEncoding:NSUTF8StringEncoding]];
-	return [self _sendRequestWithMethod:@"POST" 
+	return [self _sendRequestWithMethod:@"POST"
 								baseurl:WEIBO_BASE_URL
-								   path:path 
+								   path:path
 						queryParameters:nil
 								   body:postBody
 					   completionTarget:(id)target
-					   completionAction:(SEL)action];	
+					   completionAction:(SEL)action];
 }
 
--(NSString*) updateWithStatus:(NSString *)status 
+-(NSString*) updateWithStatus:(NSString *)status
 						image:(NSData*)imageData
 					imageName:(NSString*)imageName
-			 completionTarget:(id)target 
+			 completionTarget:(id)target
 			 completionAction:(SEL)action{
 	NSString *path=[NSString stringWithString:@"statuses/upload.json"];
 	NSString *imgExt=(NSString*)[[imageName componentsSeparatedByString:@"."] lastObject];
@@ -234,55 +234,55 @@
 	[postBody appendData:[@"Content-Disposition: form-data; name= \"source\"\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
 	[postBody appendData:[_appKey dataUsingEncoding:NSUTF8StringEncoding]];
 	[postBody appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",multipartBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
-	
+
 	return [self _sendRequestWithMethod:@"MULTIPART_POST" baseurl:WEIBO_BASE_URL
 								   path:path queryParameters:nil
 								   body:postBody
 					   completionTarget:(id)target
 					   completionAction:(SEL)action];
-	
+
 }
 
--(NSString *) getUserWithParameters:(NSMutableDictionary*)params 
+-(NSString *) getUserWithParameters:(NSMutableDictionary*)params
 				  completionTarget:(id)target
 				  completionAction:(SEL)action{
 	NSString *path=[NSString stringWithString:@"users/show.json"];
-	
+
 	return [self _sendRequestWithMethod:nil baseurl:WEIBO_BASE_URL
 								   path:path queryParameters:params
 								   body:nil
 					   completionTarget:(id)target
 					   completionAction:(SEL)action];
-	
+
 }
 
 
--(NSString *) getFriendsWithParameters:(NSMutableDictionary*)params 
+-(NSString *) getFriendsWithParameters:(NSMutableDictionary*)params
 				  completionTarget:(id)target
 				  completionAction:(SEL)action{
 	NSString *path=[NSString stringWithString:@"statuses/friends.json"];
-	
+
 	return [self _sendRequestWithMethod:nil baseurl:WEIBO_BASE_URL
 								   path:path queryParameters:params
 								   body:nil
 					   completionTarget:(id)target
 					   completionAction:(SEL)action];
-	
+
 }
--(NSString *) getStatusCommentsWithParameters:(NSMutableDictionary*)params 
+-(NSString *) getStatusCommentsWithParameters:(NSMutableDictionary*)params
 					 completionTarget:(id)target
 					 completionAction:(SEL)action{
 	NSString *path=[NSString stringWithString:@"statuses/comments.json"];
-	
+
 	return [self _sendRequestWithMethod:nil baseurl:WEIBO_BASE_URL
 								   path:path queryParameters:params
 								   body:nil
 					   completionTarget:(id)target
 					   completionAction:(SEL)action];
-	
+
 }
 
--(NSString *) getMessageSentWithParameters:(NSMutableDictionary*)params 
+-(NSString *) getMessageSentWithParameters:(NSMutableDictionary*)params
 						  completionTarget:(id)target
 						  completionAction:(SEL)action{
 	NSString *path=[NSString stringWithString:@"direct_messages/sent.json"];
@@ -291,38 +291,38 @@
 								   body:nil
 					   completionTarget:(id)target
 					   completionAction:(SEL)action];
-	
+
 }
--(NSString *) resetCountWithParameters:(NSMutableDictionary*)params 
+-(NSString *) resetCountWithParameters:(NSMutableDictionary*)params
 					  completionTarget:(id)target
 					  completionAction:(SEL)action{
 	NSString *path=[NSString stringWithString:@"statuses/reset_count.json"];
 	NSMutableData *postBody = [NSMutableData data];
 	NSString *type=[params objectForKey:@"type"];
 	[postBody appendData:[[NSString stringWithFormat:@"type=%@&source=%@",type,_appKey]dataUsingEncoding:NSUTF8StringEncoding]];
-	return [self _sendRequestWithMethod:@"POST" 
+	return [self _sendRequestWithMethod:@"POST"
 								baseurl:WEIBO_BASE_URL
-								   path:path 
+								   path:path
 						queryParameters:nil
 								   body:postBody
 					   completionTarget:(id)target
-					   completionAction:(SEL)action];	
+					   completionAction:(SEL)action];
 }
--(NSString *) showStatusWithParameters:(NSMutableDictionary*)params 
+-(NSString *) showStatusWithParameters:(NSMutableDictionary*)params
 							completionTarget:(id)target
 							completionAction:(SEL)action{
 	NSString *path=[NSString stringWithString:@"statuses/show/:id.json"];
-	
+
 	return [self _sendRequestWithMethod:nil baseurl:WEIBO_BASE_URL
 								   path:path queryParameters:params
 								   body:nil
 					   completionTarget:(id)target
 					   completionAction:(SEL)action];
-	
+
 }
 
 
--(NSString *) getDirectMessagesWithParameters:(NSMutableDictionary*)params 
+-(NSString *) getDirectMessagesWithParameters:(NSMutableDictionary*)params
 						   completionTarget:(id)target
 						   completionAction:(SEL)action{
 	NSString *path=[NSString stringWithString:@"direct_messages.json"];
@@ -339,14 +339,14 @@
 	NSString *path=[NSString stringWithString:@"favorites/create.json"];
 	NSMutableData *postBody = [NSMutableData data];
 	[postBody appendData:[[NSString stringWithFormat:@"id=%@&source=%@",[params objectForKey:@"id"],_appKey]dataUsingEncoding:NSUTF8StringEncoding]];
-	return [self _sendRequestWithMethod:@"POST" 
+	return [self _sendRequestWithMethod:@"POST"
 								baseurl:WEIBO_BASE_URL
-								   path:path 
+								   path:path
 						queryParameters:nil
 								   body:postBody
 					   completionTarget:(id)target
-					   completionAction:(SEL)action];	
-	
+					   completionAction:(SEL)action];
+
 }
 
 -(NSString *) destroyFavoritesWithParameters:(NSMutableDictionary*)params
@@ -355,25 +355,25 @@
 	NSString *path=[NSString stringWithString:@"favorites/destroy.json"];
 	NSMutableData *postBody = [NSMutableData data];
 	[postBody appendData:[[NSString stringWithFormat:@"id=%@&source=%@",[params objectForKey:@"id"],_appKey]dataUsingEncoding:NSUTF8StringEncoding]];
-	return [self _sendRequestWithMethod:@"POST" 
+	return [self _sendRequestWithMethod:@"POST"
 								baseurl:WEIBO_BASE_URL
-								   path:path 
+								   path:path
 						queryParameters:nil
 								   body:postBody
 					   completionTarget:(id)target
-					   completionAction:(SEL)action];	
-	
+					   completionAction:(SEL)action];
+
 }
 
 #pragma mark Request Send Method
--(NSString*)_sendRequestWithMethod:(NSString*)method 
+-(NSString*)_sendRequestWithMethod:(NSString*)method
 						   baseurl:(NSString*) baseurl
 							  path:(NSString*) path
 				   queryParameters:(NSMutableDictionary *) params
 							  body:(NSMutableData*) body
 				  completionTarget:(id)target
 				  completionAction:(SEL)action{
-	
+
 	if(method==nil||[method isEqualToString:@"GET"]){
 		[params setValue:_appKey forKey:@"source"];
 	}
@@ -389,11 +389,11 @@
 		NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodingWithLineLength:80]];
 		[theRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
 	}
-	
+
 	if(method&&[method isEqualToString:@"POST"]){
 		[theRequest setHTTPMethod:method];
 		if(body){
-			[theRequest setHTTPBody:body]; 
+			[theRequest setHTTPBody:body];
 		}
 	}
 	if (method&&[method isEqualToString:@"MULTIPART_POST"]) {
@@ -404,29 +404,29 @@
 			[theRequest setHTTPBody:body];
 		}
 	}
-	return [self _sendRequest:theRequest 				  
+	return [self _sendRequest:theRequest
 			 completionTarget:(id)target
 			 completionAction:(SEL)action];
 }
 
--(NSString*) _sendRequest:(NSURLRequest*)request 				  
+-(NSString*) _sendRequest:(NSURLRequest*)request
 		 completionTarget:(id)target
 		 completionAction:(SEL)action{
-	WeiboURLConnection * connection = [[WeiboURLConnection alloc] 
+	WeiboURLConnection * connection = [[WeiboURLConnection alloc]
 									   initWithRequest:request delegate:self];
 	if (!connection) {
         return nil;
     } else {
-		[[NSNotificationCenter defaultCenter] postNotificationName:HTTPConnectionStartNotification 
+		[[NSNotificationCenter defaultCenter] postNotificationName:HTTPConnectionStartNotification
 															object:nil];
-		
+
 		connection.completionTarget=target;
 		connection.completionAction=action;
         [_connections setObject:connection forKey:[connection identifier]];
         [connection release];
     }
 	return [connection identifier];
-	
+
 }
 
 
@@ -434,7 +434,7 @@
 - (void)connection:(WeiboURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
 	[connection resetDataLength];
-    
+
     // Get response code.
     NSHTTPURLResponse *resp = (NSHTTPURLResponse *)response;
     NSInteger statusCode = [resp statusCode];
@@ -456,7 +456,7 @@
 - (void)connectionDidFinishLoading:(WeiboURLConnection *)connection
 {
 	[[NSNotificationCenter defaultCenter]postNotificationName:HTTPConnectionFinishedNotification object:nil];
-	
+
 	NSData *receivedData = connection.data;
 	if(receivedData){
 		[self _parseDataForConnection:connection];
@@ -475,7 +475,7 @@
 -(void)_parseDataForConnection:(WeiboURLConnection*)connection{
 	NSData *jsonData = [[connection.data copy] autorelease];
 	NSString *jsonString = [[[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding] autorelease];
-	[connection.completionTarget performSelector:connection.completionAction 
+	[connection.completionTarget performSelector:connection.completionAction
 									  withObject:[jsonString JSONValue]];
 }
 @end

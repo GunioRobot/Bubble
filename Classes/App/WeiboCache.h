@@ -25,7 +25,7 @@
 -(NSString*)entityNameWithRelationshipName:(NSString*)relationshipName;
 -(NSDictionary*)dictionaryFromManagedObject:(NSManagedObject*)managedObject;
 -(NSArray*)dataArrayFromManagedObjects:(NSArray*)managedObjects;
--(NSManagedObject*)managedObjectFromDictionary:(NSDictionary*)valueDictionary 
+-(NSManagedObject*)managedObjectFromDictionary:(NSDictionary*)valueDictionary
 								withEntityName:(NSString*)entityName
 					  withManagedObjectContext:(NSManagedObjectContext*)moc;
 

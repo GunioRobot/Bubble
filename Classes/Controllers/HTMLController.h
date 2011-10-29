@@ -18,23 +18,23 @@
 	WebView *webView;
 	//web page template engine
 	TemplateEngine *templateEngine;
-	
+
 	NSString *statusesPageTemplatePath;
 	NSString *statusesTemplatePath;
 	NSString *userTemplatePath;
 	NSString *userlistTemplatePath;
 	NSString *useritemTemplatePath;
 	NSString *statusDetailTemplatePath;
-	NSString *commentsTemplatePath;	
+	NSString *commentsTemplatePath;
 	NSString *messagePageTemplatePath;
 	NSString *messageTemplatePath;
 	NSString *messageSentTemplatePath;
 	NSString* loadingHTML;
-	
+
 	NSString *mainPagePath;
-	
+
 	AccountController *weiboAccount;
-	
+
 	NSURL *baseURL;
 	NSString *spinner;
 }
@@ -77,7 +77,7 @@
 @property(nonatomic,retain) NSString *userlistTemplatePath;
 @property(nonatomic,retain) NSString *useritemTemplatePath;
 @property(nonatomic,retain) NSString *statusDetailTemplatePath;
-@property(nonatomic,retain) NSString *commentsTemplatePath;	
+@property(nonatomic,retain) NSString *commentsTemplatePath;
 @property(nonatomic,retain) NSString *messagePageTemplatePath;
 @property(nonatomic,retain) NSString *messageTemplatePath;
 @property(nonatomic,retain) NSString *messageSentTemplatePath;

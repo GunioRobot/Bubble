@@ -39,18 +39,18 @@
 
 //verify_credentials
 
--(NSString *) verifyAccountWithParameters:(NSMutableDictionary*)params 
-						 completionTarget:(id)target  
+-(NSString *) verifyAccountWithParameters:(NSMutableDictionary*)params
+						 completionTarget:(id)target
 						 completionAction:(SEL)action;
 
 
 //check unread
--(NSString *)checkUnreadWithParameters:(NSMutableDictionary*)params 
-					  completionTarget:(id)target  
+-(NSString *)checkUnreadWithParameters:(NSMutableDictionary*)params
+					  completionTarget:(id)target
 					  completionAction:(SEL)action;
 //timeline
 
--(NSString *) getHomeTimelineWithParameters:(NSMutableDictionary*)params 
+-(NSString *) getHomeTimelineWithParameters:(NSMutableDictionary*)params
 						   completionTarget:(id)target
 						completionAction:(SEL)action;
 
@@ -66,24 +66,24 @@
 					   completionTarget:(id)target
 					   completionAction:(SEL)action;
 
--(NSString *) updateWithStatus:(NSString*)status					   
+-(NSString *) updateWithStatus:(NSString*)status
 			  completionTarget:(id)target
 			  completionAction:(SEL)action;
--(NSString*) updateWithStatus:(NSString *)status 
+-(NSString*) updateWithStatus:(NSString *)status
 						image:(NSData*)imageData
 					imageName:(NSString*)imageName
-			 completionTarget:(id)target 
+			 completionTarget:(id)target
 			 completionAction:(SEL)action;
--(NSString *) getUserWithParameters:(NSMutableDictionary*)params 
+-(NSString *) getUserWithParameters:(NSMutableDictionary*)params
 				  completionTarget:(id)target
 				  completionAction:(SEL)action;
--(NSString *) getFriendsWithParameters:(NSMutableDictionary*)params 
+-(NSString *) getFriendsWithParameters:(NSMutableDictionary*)params
 					 completionTarget:(id)target
 					 completionAction:(SEL)action;
--(NSString *) getStatusCommentsWithParameters:(NSMutableDictionary*)params 
+-(NSString *) getStatusCommentsWithParameters:(NSMutableDictionary*)params
 							completionTarget:(id)target
 							completionAction:(SEL)action;
--(NSString *) getDirectMessagesWithParameters:(NSMutableDictionary*)params 
+-(NSString *) getDirectMessagesWithParameters:(NSMutableDictionary*)params
 						   completionTarget:(id)target
 						   completionAction:(SEL)action;
 
@@ -96,7 +96,7 @@
 -(NSString *) repostWithParamters:(NSMutableDictionary*)params
 				 completionTarget:(id)target
 				 completionAction:(SEL)action;
--(NSString *) showStatusWithParameters:(NSMutableDictionary*)params 
+-(NSString *) showStatusWithParameters:(NSMutableDictionary*)params
 					 completionTarget:(id)target
 					 completionAction:(SEL)action;
 
@@ -113,10 +113,10 @@
 -(NSString *)getFollowersWithParameters:(NSMutableDictionary*)params
 						  completionTarget:(id)target
 						  completionAction:(SEL)action;
--(NSString *) getMessageSentWithParameters:(NSMutableDictionary*)params 
+-(NSString *) getMessageSentWithParameters:(NSMutableDictionary*)params
 						  completionTarget:(id)target
 						  completionAction:(SEL)action;
--(NSString *) resetCountWithParameters:(NSMutableDictionary*)params 
+-(NSString *) resetCountWithParameters:(NSMutableDictionary*)params
 						  completionTarget:(id)target
 						  completionAction:(SEL)action;
 @end

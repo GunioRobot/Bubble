@@ -20,33 +20,33 @@
 	MGTemplateEngine *engine = [MGTemplateEngine templateEngine];
 	[engine setDelegate:self];
 	[engine setMatcher:[ICUTemplateMatcher matcherWithTemplateEngine:engine]];
-	
+
 	// Set up any needed global variables.
 	// Global variables persist for the life of the engine, even when processing multiple templates.
 	[engine setObject:@"Hi there!" forKey:@"hello"];
-	
+
 	// Get path to template.
 	NSString *templatePath = [[NSBundle mainBundle] pathForResource:@"sample_template" ofType:@"txt"];
-	
+
 	// Set up some variables for this specific template.
-	NSDictionary *variables = [NSDictionary dictionaryWithObjectsAndKeys: 
+	NSDictionary *variables = [NSDictionary dictionaryWithObjectsAndKeys:
 							   [NSArray arrayWithObjects:
-								@"matt", @"iain", @"neil", @"chris", @"steve", nil], @"guys", 
-							   [NSDictionary dictionaryWithObjectsAndKeys:@"baz", @"bar", nil], @"foo", 
+								@"matt", @"iain", @"neil", @"chris", @"steve", nil], @"guys",
+							   [NSDictionary dictionaryWithObjectsAndKeys:@"baz", @"bar", nil], @"foo",
 							   nil];
-	
+
 	// Process the template and display the results.
 	NSString *result = [engine processTemplateInFileAtPath:templatePath withVariables:variables];
 	NSLog(@"Processed template:\r%@", result);
-	
+
 	[NSApp terminate:self];
 }
 
 
 // ****************************************************************
-// 
+//
 // Methods below are all optional MGTemplateEngineDelegate methods.
-// 
+//
 // ****************************************************************
 
 

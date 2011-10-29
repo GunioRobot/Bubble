@@ -18,15 +18,15 @@ typedef enum {
 }OperationType;
 
 @interface WeiboTimeline : NSObject{
-	//类型 
+	//类型
 	TimelineType timelineType;
 	NSString *typeName;
 	__weak WeiboConnector *weiboConnector;
-	
+
 	//data 中记录当前timeline的维护数据 newData记录最近收到的数据
 	NSMutableArray *data;
 	NSArray *newData;
-	
+
 	//NSNumber *lastReadId;
 	NSNumber *lastReceivedId;
 	NSNumber *oldestReceivedId;
@@ -34,7 +34,7 @@ typedef enum {
 	BOOL firstReload;
 	OperationType operation;
 }
--(id)initWithWeiboConnector:(WeiboConnector*)connector 
+-(id)initWithWeiboConnector:(WeiboConnector*)connector
 			   timelineType:(TimelineType)type;
 
 -(void)loadRecentTimeline;

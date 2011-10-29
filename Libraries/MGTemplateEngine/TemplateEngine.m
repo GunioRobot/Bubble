@@ -29,9 +29,9 @@
 	return [engine processTemplate:template withVariables:context];
 }
 // ****************************************************************
-// 
+//
 // Methods below are all optional MGTemplateEngineDelegate methods.
-// 
+//
 // ****************************************************************
 
 

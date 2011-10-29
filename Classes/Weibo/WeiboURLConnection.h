@@ -13,10 +13,10 @@
 	NSMutableData *_data;
 	NSString *_identifier;
 
-	
+
 	id completionTarget;
 	SEL completionAction;
-	
+
 }
 -(id)initWithRequest:(NSURLRequest*) request delegate:(id)delegate;
 - (void)appendData:(NSData *)data;

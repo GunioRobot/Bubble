@@ -26,12 +26,12 @@
 		prefs=[[SS_PrefsController alloc]initWithPanes:panesArray];
 		[prefs setAlwaysShowsToolbar:YES];
 		[prefs setDebug:YES];
-		
+
 		[prefs setAlwaysOpensCentered:YES];
-		
+
 		//[prefs setPanesOrder:[NSArray arrayWithObjects:@"General",@"Account", nil]];
 	}
-    
+
 	// Show the preferences window.
 	[prefs showPreferencesWindow];
 }

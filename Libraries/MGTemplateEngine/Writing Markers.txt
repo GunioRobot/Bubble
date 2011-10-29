@@ -44,7 +44,7 @@ This intimidating-looking method is the core of a marker. Again, you are advised
 				Note: if supplied, will include a dictionary of variables set for the current block.
 
 	newVariables:		variables to set in the template context. If blockStarted is YES, these will be scoped only within the new block.
-				Note: if currentBlockInfo was specified, variables set in the return dictionary will override/update any variables of 
+				Note: if currentBlockInfo was specified, variables set in the return dictionary will override/update any variables of
 				the same name in currentBlockInfo's variables. This is for ease of updating loop-counters or such.
 
 The return value is a value to insert into the template output, or nil if nothing is to be inserted (which is a valid and common situation; for example, a "for" marker does not of itself provide any output).

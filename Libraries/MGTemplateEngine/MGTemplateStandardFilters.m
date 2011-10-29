@@ -21,8 +21,8 @@
 - (NSArray *)filters
 {
 	return [NSArray arrayWithObjects:
-			UPPERCASE, LOWERCASE, CAPITALIZED, 
-			DATE_FORMAT, COLOR_FORMAT, 
+			UPPERCASE, LOWERCASE, CAPITALIZED,
+			DATE_FORMAT, COLOR_FORMAT,
 			nil];
 }
 
@@ -31,16 +31,16 @@
 {
 	if ([filter isEqualToString:UPPERCASE]) {
 		return [[NSString stringWithFormat:@"%@", value] uppercaseString];
-		
+
 	} else if ([filter isEqualToString:LOWERCASE]) {
 		return [[NSString stringWithFormat:@"%@", value] lowercaseString];
-		
+
 	} else if ([filter isEqualToString:CAPITALIZED]) {
 		return [[NSString stringWithFormat:@"%@", value] capitalizedString];
-		
+
 	} else if ([filter isEqualToString:DATE_FORMAT]) {
-		// Formats NSDates according to Unicode syntax: 
-		// http://unicode.org/reports/tr35/tr35-4.html#Date_Format_Patterns 
+		// Formats NSDates according to Unicode syntax:
+		// http://unicode.org/reports/tr35/tr35-4.html#Date_Format_Patterns
 		// e.g. "dd MM yyyy" etc.
 		if ([value isKindOfClass:[NSDate class]] && [args count] == 1) {
 			NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
@@ -49,7 +49,7 @@
 			[dateFormatter setDateFormat:format];
 			return [dateFormatter stringFromDate:(NSDate *)value];
 		}
-		
+
 	} else if ([filter isEqualToString:COLOR_FORMAT]) {
 #if TARGET_OS_IPHONE
         if ([value isKindOfClass:[UIColor class]] && [args count] == 1) {
@@ -63,10 +63,10 @@
                 CGColorRef color = [(UIColor *)value CGColor];
                 CGColorSpaceRef colorSpace = CGColorGetColorSpace(color);
                 CGColorSpaceModel colorSpaceModel = CGColorSpaceGetModel(colorSpace);
-                
+
                 if (colorSpaceModel != kCGColorSpaceModelRGB)
                     return @"000000";
-                
+
                 const CGFloat *components = CGColorGetComponents(color);
                 NSString *colorHex = [NSString stringWithFormat:@"%02x%02x%02x",
                                       (int)(components[0] * 255),
@@ -78,18 +78,18 @@
 				if (!color) { // happens if the colorspace couldn't be converted
 					return @"000000"; // black
 				} else {
-					NSString *colorHex = [NSString stringWithFormat:@"%02x%02x%02x", 
-										  (int)([color redComponent] * 255), 
-										  (int)([color greenComponent] * 255), 
+					NSString *colorHex = [NSString stringWithFormat:@"%02x%02x%02x",
+										  (int)([color redComponent] * 255),
+										  (int)([color greenComponent] * 255),
 										  (int)([color blueComponent] * 255)];
 					return colorHex;
 				}
 #endif
 			}
 		}
-		
+
 	}
-	
+
 	return value;
 }
 

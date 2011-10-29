@@ -27,7 +27,7 @@
 	ComposeController *composeController;
 	ImagePanelController *imagePanelController;
 	UserInputController *userInputController;
-	
+
 }
 -(id)init;
 -(IBAction)selectViewWithSegmentControl:(id)sender;

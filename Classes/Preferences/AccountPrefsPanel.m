@@ -18,7 +18,7 @@
 - (NSView *)paneView
 {
     BOOL loaded = YES;
-    
+
     if (!prefsView) {
         loaded = [NSBundle loadNibNamed:@"AccountPrefsView" owner:self];
 		editAccountController=[[AccountEditorController alloc] initWithDelegate:self];
@@ -26,11 +26,11 @@
 		[accountTable setDoubleAction:@selector(doubleClickAction:)];
 		[accountTable setTarget:self];
     }
-    
+
     if (loaded) {
         return prefsView;
     }
-    
+
     return nil;
 }
 
@@ -77,7 +77,7 @@
 	[editAccountController close:self];
 }
 -(void)removeAccount:(NSString*)username{
-	
+
 }
 
 - (void)tableView:(NSTableView *)aTableView willDisplayCell:(id)aCell forTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
